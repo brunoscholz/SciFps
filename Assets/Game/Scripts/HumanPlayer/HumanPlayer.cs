@@ -125,20 +125,17 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
     public bool Attack(IPlayer target)
     {
-        // If we can't attack we're already done
-        if (!CanAttack || !target.CanTakeDamage)
-            return false;
-
         // Figure out how much we will hurt them
         Hit shot = new Hit(this, "normal", false);
         float tDamage = _damage - Random.Range(0, Mathf.Clamp01(1 - _accuracy)) * _damage;
         shot.SetDamage(tDamage);
 
         LaserBullet bt = shooter.Shoot();
-        bt.Shot(shot, true);
+        if(bt)
+        {
+            bt.Shot(shot, true);
 
-        // We'll consider an attack incapacitating (as we can't attack again for a moment)
-        _incapacitatedTimer = Time.time + _incapacitationTime;
+        }
 
         return tDamage > 0;
 
