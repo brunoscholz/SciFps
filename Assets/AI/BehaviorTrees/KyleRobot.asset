@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1227330239, guid: 9fa2ecd1ff2ad394281dd3bf72c5b76e, type: 3}
+  m_Name: KyleRobot
+  m_EditorClassIdentifier: 
+  _dataSerializer:
+    _serializedData: <scriptableobject version="1.3" type="RAIN.BehaviorTrees.BTAsset"><fields><field
+      value="&lt;behaviortree version=&quot;1.1&quot; repeatuntil=&quot;&quot; name=&quot;Zombie&quot;
+      debugbreak=&quot;False&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;all&quot;
+      repeatuntil=&quot;&quot; name=&quot;normalBehavior&quot; fail=&quot;any&quot;
+      debugbreak=&quot;False&quot;&gt;&lt;selector usepriorities=&quot;True&quot;
+      repeatuntil=&quot;&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;dying&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;dead==true&quot; /&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;takehit&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;HIT==true&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot;
+      repeatuntil=&quot;&quot; name=&quot;sequencer&quot; debugbreak=&quot;False&quot;&gt;&lt;animate
+      repeatuntil=&quot;success&quot; priority=&quot;&quot; name=&quot;animate&quot;
+      debugbreak=&quot;False&quot; animationstate=&quot;hit&quot; /&gt;&lt;timer waitforsec=&quot;1&quot;
+      returnvalue=&quot;success&quot; priority=&quot;&quot; name=&quot;timer&quot;
+      debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;&quot; priority=&quot;&quot;
+      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
+      name=&quot;action&quot; debugbreak=&quot;False&quot; classname=&quot;TestingHit&quot;
+      /&gt;&lt;animate repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;animate&quot;
+      debugbreak=&quot;False&quot; animationstate=&quot;walk&quot; /&gt;&lt;/sequencer&gt;&lt;parallel
+      tiebreaker=&quot;fail&quot; succeed=&quot;all&quot; repeatuntil=&quot;&quot;
+      name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;
+      /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
+      name=&quot;offhit&quot; debugbreak=&quot;False&quot; constraint=&quot;HIT==false&quot;&gt;&lt;parallel
+      tiebreaker=&quot;fail&quot; succeed=&quot;all&quot; repeatuntil=&quot;&quot;
+      name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;detect
+      sensor=&quot;&amp;quot;eyes&amp;quot;&quot; repeatuntil=&quot;running&quot;
+      name=&quot;far&quot; matchtype=&quot;best&quot; entityobjectvariable=&quot;varHero&quot;
+      debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
+      aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;charVisual&amp;quot;&quot;
+      /&gt;&lt;detect sensor=&quot;&amp;quot;close&amp;quot;&quot; repeatuntil=&quot;running&quot;
+      name=&quot;near&quot; matchtype=&quot;best&quot; entityobjectvariable=&quot;varNear&quot;
+      debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
+      aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;charVisual&amp;quot;&quot;
+      /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;chasing&quot;
+      debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
+      name=&quot;dontseehero&quot; debugbreak=&quot;False&quot; constraint=&quot;varHero==null&quot;&gt;&lt;parallel
+      tiebreaker=&quot;fail&quot; succeed=&quot;all&quot; repeatuntil=&quot;&quot;
+      name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;waypointpatrol
+      waypointsetvariable=&quot;PatrolRoute&quot; waypointactiontype=&quot;patrol&quot;
+      traversetype=&quot;loop&quot; traverseorder=&quot;forward&quot; repeatuntil=&quot;&quot;
+      pathtargetvariable=&quot;&quot; name=&quot;patrol&quot; movetargetvariable=&quot;nextStop&quot;
+      debugbreak=&quot;False&quot;&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot;
+      name=&quot;move&quot; movetarget=&quot;nextStop&quot; movespeed=&quot;1&quot;
+      facetarget=&quot;&quot; debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot;
+      closeenoughangle=&quot;&quot; /&gt;&lt;/waypointpatrol&gt;&lt;animate repeatuntil=&quot;running&quot;
+      name=&quot;animate&quot; debugbreak=&quot;False&quot; animationstate=&quot;Run&quot;
+      /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;seehero&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;varHero!=null&quot;&gt;&lt;selector usepriorities=&quot;False&quot;
+      repeatuntil=&quot;&quot; name=&quot;arewenear&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;chase&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;varNear==null&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
+      succeed=&quot;all&quot; repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot;
+      debugbreak=&quot;False&quot;&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot;
+      name=&quot;move&quot; movetarget=&quot;varHero&quot; movespeed=&quot;1&quot;
+      facetarget=&quot;&quot; debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot;
+      closeenoughangle=&quot;&quot; /&gt;&lt;animate repeatuntil=&quot;running&quot;
+      name=&quot;animate&quot; debugbreak=&quot;False&quot; animationstate=&quot;Run&quot;
+      /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;attack&quot; debugbreak=&quot;False&quot; constraint=&quot;varNear!=null&quot;&gt;&lt;mecparam
+      valueexpression=&quot;0&quot; repeatuntil=&quot;&quot; parametertype=&quot;float&quot;
+      parametername=&quot;Speed&quot; name=&quot;mecparam&quot; debugbreak=&quot;False&quot;
+      damptime=&quot;0&quot; /&gt;&lt;animate repeatuntil=&quot;running&quot; name=&quot;animate&quot;
+      debugbreak=&quot;False&quot; animationstate=&quot;attack&quot; /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
+      type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
+      elementtype="System.String" /></fields><references /></scriptableobject>
+    _serializedGameObjects: []
+    _serializedCustomData: []
