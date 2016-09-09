@@ -83,11 +83,6 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         eRig = GetComponentInChildren<EntityRig>().Entity;
     }
 
-    void Start()
-    {
-        SetUpPlayer(Team);
-    }
-
     public void SetUpPlayer(TeamName t)
     {
         Team = t;
@@ -99,7 +94,10 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
     public void SetColors()
     {
-
+        //transform.GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("albedo", TeamSets.Colors[Team.ToString()]);
+        SkinnedMeshRenderer rend = transform.GetComponentInChildren<SkinnedMeshRenderer>();
+        //rend.material.shader = Shader.Find("Albedo");
+        rend.material.SetColor("_Color", TeamSets.Colors[Team.ToString()]);
     }
 
 	void Update ()

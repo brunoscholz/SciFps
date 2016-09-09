@@ -82,11 +82,6 @@ public class HumanPlayer : MonoBehaviour, IPlayer
         eRig = GetComponentInChildren<EntityRig>().Entity;
     }
 
-    void Start()
-    {
-        SetUpPlayer(Team);
-    }
-
     void FixedUpdate()
     {
         if (Input.GetButtonDown("Reload"))
@@ -120,7 +115,10 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
     public void SetColors()
     {
-
+        //transform.GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("albedo", TeamSets.Colors[Team.ToString()]);
+        SkinnedMeshRenderer rend = transform.GetComponentInChildren<SkinnedMeshRenderer>();
+        //rend.material.shader = Shader.Find("Albedo");
+        rend.material.SetColor("_Color", TeamSets.Colors[Team.ToString()]);
     }
 
     public bool Attack(IPlayer target)

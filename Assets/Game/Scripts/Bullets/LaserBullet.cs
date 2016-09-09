@@ -17,7 +17,7 @@ public class LaserBullet : MonoBehaviour
 
     void Awake()
     {
-        GetComponent<ParticleSystem>().startColor = TeamColors.Colors[Team.ToString()];
+        GetComponent<ParticleSystem>().startColor = TeamSets.Colors[Team.ToString()];
     }
 
     void Update()
