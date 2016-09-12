@@ -9,9 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 401048}
   - 114: {fileID: 11457250}
+  - 114: {fileID: 11451314}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: GameController
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23,12 +24,30 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11451314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b088cff7acf03874cbc00976b11dd4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameMode: 0
+  maxTime: 10
+  maxKills: 20
+  maxFlags: 3
+  Dificulty: 1
+  maxTeamMembers: 5
+  onlyAI: 1
 --- !u!114 &11457250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40,18 +59,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af870837d7faa1546aeb5b18a630da8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 0}
-  teamRed: []
-  teamBlue: []
-  playerPrefab: {fileID: 0}
-  zombiePrefab: {fileID: 0}
-  chickenPrefab: {fileID: 0}
-  kamikazePrefab: {fileID: 0}
+  spawnPoints: []
+  playerPrefab: {fileID: 467012, guid: 83fdf5ced99e75c4aa1827295ce48b21, type: 2}
+  robotPrefab: {fileID: 456372, guid: 98fa9a5fbc3767843991550dbac6e517, type: 2}
+  chickenPrefab: {fileID: 481940, guid: 683977dcec57a34468ba20f526274cf0, type: 2}
+  kamikazePrefab: {fileID: 474970, guid: c6a70f3b0bfdd224ab9c38c9f53c3a89, type: 2}
   redKills: 0
   blueKills: 0
   counter: 0
   flags: 3
+  gameRunning: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
