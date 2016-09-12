@@ -2,6 +2,7 @@
 using System.Collections;
 using RAIN.Core;
 using RAIN.Entities;
+using System;
 
 [RequireComponent(typeof(AudioSource))]
 public class ZombiePlayer : MonoBehaviour, IPlayer
@@ -16,6 +17,18 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
     {
         get { return team; }
         set { team = value; }
+    }
+
+    public Transform Body
+    {
+        get { return transform; }
+    }
+
+    int myID;
+    public int teamID
+    {
+        get { return myID; }
+        set { myID = value; }
     }
 
     [SerializeField]
@@ -83,9 +96,11 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         eRig = GetComponentInChildren<EntityRig>().Entity;
     }
 
-    public void SetUpPlayer(TeamName t)
+    public void SetUpPlayer(TeamName t, int id)
     {
         Team = t;
+        myID = id;
+
         TeamAspect ta = new TeamAspect(Team);
         eRig.AddAspect(ta);
         SetColors();
@@ -100,14 +115,49 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         rend.material.SetColor("_Color", TeamSets.Colors[Team.ToString()]);
     }
 
-	void Update ()
+    public void Respawn()
     {
-        if (_health < 0)
-        {
-            _health = 0;
-            StartCoroutine(Die());
-        }
+        SetAction("dead", false);
+        eRig.ActivateEntity();
+        SetAction("start", true);
     }
+
+    public void SetCommander(GameObject go)
+    {
+        SetAction("myCommander", go);
+    }
+
+    public void SetCommand(string action)
+    {
+        SetAction("command", action);
+    }
+
+    public void SetAction(string name, string value)
+    {
+        ai.WorkingMemory.SetItem(name, value);
+    }
+
+    public void SetAction(string name, float value)
+    {
+        ai.WorkingMemory.SetItem(name, value);
+    }
+
+    public void SetAction(string name, bool value)
+    {
+        ai.WorkingMemory.SetItem(name, value);
+    }
+
+    public void SetAction(string name, Vector3 value)
+    {
+        ai.WorkingMemory.SetItem(name, value);
+    }
+
+    public void SetAction(string name, GameObject value)
+    {
+        ai.WorkingMemory.SetItem(name, value);
+    }
+
+    void Update () { }
 
     public bool Attack(IPlayer target)
     {
@@ -117,7 +167,7 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
         // Figure out how much we will hurt them
         Hit shot = new Hit(this, "normal", false);
-        float tDamage = _damage - Random.Range(0, Mathf.Clamp01(1 - _accuracy)) * _damage;
+        float tDamage = _damage - UnityEngine.Random.Range(0, Mathf.Clamp01(1 - _accuracy)) * _damage;
         shot.SetDamage(tDamage);
 
         // Shoot
@@ -141,6 +191,9 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         // A very simple health
         _health = Mathf.Max(0, _health - hit.Damage);
 
+        if(!IsAlive)
+            StartCoroutine(Die());
+
         // Getting damage makes us invulnerable, but we can't attack either
         if (hit.Damage > 0)
         {
@@ -153,9 +206,9 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
     public void Hit(Hit hit)
     {
-        float armor = Random.Range(2, 10);
+        float armor = UnityEngine.Random.Range(2, 10);
         //animator.SetTrigger("Hit");
-        ai.WorkingMemory.SetItem("HIT", true);
+        SetAction("HIT", true);
         _health -= hit.Damage - armor;
 
         if (HitParticle)
@@ -167,19 +220,14 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
     public IEnumerator Die()
     {
-        ai.WorkingMemory.SetItem("dead", true);
+        SetAction("dead", true);
+        eRig.DeactivateEntity();
         animator.SetFloat("Speed", 0);
+        yield return new WaitForSeconds(5);
 
-        animator.SetBool("Dead", true);
-        yield return null;
-        animator.SetBool("Dead", false);
+        SetAction("start", false);
 
-        foreach (Collider c in GetComponents<Collider>())
-        {
-            c.enabled = false;
-        }
-
-        Debug.Log("DIE MOTHERFUCKER!!!!");
-        Destroy(gameObject, 15f);
+        GameManager manager = GameObject.FindObjectOfType<GameManager>();
+        manager.ReportDown(this);
     }
 }

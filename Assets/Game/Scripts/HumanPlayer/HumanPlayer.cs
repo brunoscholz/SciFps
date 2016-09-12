@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using RAIN.Entities;
+using System;
 
 [RequireComponent(typeof(AudioSource))]
 public class HumanPlayer : MonoBehaviour, IPlayer
@@ -15,6 +16,18 @@ public class HumanPlayer : MonoBehaviour, IPlayer
     {
         get { return team; }
         set { team = value; }
+    }
+
+    public Transform Body
+    {
+        get { return transform; }
+    }
+
+    int myID;
+    public int teamID
+    {
+        get { return myID; }
+        set { myID = value; }
     }
 
     [SerializeField]
@@ -103,9 +116,11 @@ public class HumanPlayer : MonoBehaviour, IPlayer
         StartCoroutine(hud.ShowNotification("HEADSHOT!!!"));
     }
 
-    public void SetUpPlayer(TeamName t)
+    public void SetUpPlayer(TeamName t, int id)
     {
         Team = t;
+        myID = id;
+
         TeamAspect ta = new TeamAspect(Team);
         eRig.AddAspect(ta);
 
@@ -121,11 +136,16 @@ public class HumanPlayer : MonoBehaviour, IPlayer
         rend.material.SetColor("_Color", TeamSets.Colors[Team.ToString()]);
     }
 
+    public void Respawn()
+    {
+        throw new NotImplementedException();
+    }
+
     public bool Attack(IPlayer target)
     {
         // Figure out how much we will hurt them
         Hit shot = new Hit(this, "normal", false);
-        float tDamage = _damage - Random.Range(0, Mathf.Clamp01(1 - _accuracy)) * _damage;
+        float tDamage = _damage - UnityEngine.Random.Range(0, Mathf.Clamp01(1 - _accuracy)) * _damage;
         shot.SetDamage(tDamage);
 
         LaserBullet bt = shooter.Shoot();
@@ -159,7 +179,7 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
     public void Hit(Hit hit)
     {
-        float armor = Random.Range(2, 10);
+        float armor = UnityEngine.Random.Range(2, 10);
         
         // Animation for HIT
         //animator.SetTrigger("Hit");
@@ -188,5 +208,38 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
         Debug.Log("DIE MOTHERFUCKER!!!!");
         Destroy(gameObject, 15f);
+    }
+
+    public void SetCommander(GameObject go) { }
+
+    public void SetCommand(string action)
+    {
+        SetAction("command", action);
+    }
+
+    public void SetAction(string name, string value)
+    {
+        
+    }
+
+    public void SetAction(string name, bool value)
+    {
+        //if (name.Equals("start") && value)
+            //StartGame();
+    }
+
+    public void SetAction(string name, float value)
+    {
+        
+    }
+
+    public void SetAction(string name, Vector3 value)
+    {
+        
+    }
+
+    public void SetAction(string name, GameObject value)
+    {
+        
     }
 }

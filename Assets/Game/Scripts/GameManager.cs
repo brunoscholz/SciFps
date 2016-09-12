@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,12 +21,15 @@ public class GameManager : MonoBehaviour
     public int counter = 0;
     public int flags = 3;
 
+    public bool gameRunning = false;
+
     void Awake()
     {
         // do the setup
         options = GetComponent<GameOptions>();
         Setup();
         CreateTeams();
+        StartCoroutine(StartGame());
     }
 
     void Setup()
@@ -48,20 +52,20 @@ public class GameManager : MonoBehaviour
             counter = 0;
             flags = options.maxFlags;
         }
-
-        // Clear both teams
-        Teams["blue"].Clear();
-        Teams["red"].Clear();
     }
 
     void CreateTeams()
     {
-        if(!options.onlyAI)
+        // Clear both teams
+        Teams["blue"].Clear();
+        Teams["red"].Clear();
+
+        if (!options.onlyAI)
         {
             // Create player in a random Team
             TeamName pTeam = (TeamName)UnityEngine.Random.Range(0, 1);
             HumanPlayer human = (Instantiate(playerPrefab, TeamSets.Spots[pTeam.ToString()], Quaternion.identity) as GameObject).GetComponent<HumanPlayer>();
-            human.SetUpPlayer(pTeam);
+            human.SetUpPlayer(pTeam, 0);
             Teams[pTeam.ToString()].Add(human);
         }
 
@@ -77,7 +81,8 @@ public class GameManager : MonoBehaviour
 
             Transform go = Instantiate(kamikazePrefab, pos, Quaternion.identity) as Transform;
             ZombiePlayer zombie = go.GetComponent<ZombiePlayer>();
-            zombie.SetUpPlayer(TeamName.red);
+            zombie.SetUpPlayer(TeamName.red, i);
+            zombie.SetCommander(gameObject);
             Teams["red"].Add(zombie);
         }
 
@@ -93,19 +98,60 @@ public class GameManager : MonoBehaviour
 
             Transform go = Instantiate(kamikazePrefab, pos, Quaternion.identity) as Transform;
             ZombiePlayer zombie = go.GetComponent<ZombiePlayer>();
-            zombie.SetUpPlayer(TeamName.blue);
+            zombie.SetUpPlayer(TeamName.blue, i);
+            zombie.SetCommander(gameObject);
             Teams["blue"].Add(zombie);
         }
     }
 
-    void StartGame ()
+    IEnumerator StartGame ()
     {
-	    // instantiate teams, start game!
-        
+        yield return null;
+
+	    foreach(IPlayer p in Teams["red"].Concat(Teams["blue"]))
+        {
+            p.SetAction("start", true);
+        }
+
+        gameRunning = true;
 	}
 	
+    void ResetGame()
+    {
+        gameRunning = false;
+        CreateTeams();
+        StartCoroutine(StartGame());
+    }
+
+    public void ReportDown(IPlayer player)
+    {
+        Vector3 pos = TeamSets.Spots[player.Team.ToString()];
+        pos.x += 3 * player.teamID;
+
+        if (options.maxTeamMembers > 5 && player.teamID > 4)
+            pos.y += 3;
+
+        player.Body.position = pos;
+        player.Respawn();
+    }
+
+    public void AskForHelp(IPlayer needed, Vector3 target)
+    {
+        foreach (IPlayer p in Teams[needed.Team.ToString()])
+        {
+            p.SetAction("help", target);
+        }
+    }
+
 	void Update ()
     {
+        if (!gameRunning)
+            return;
+
+        if (options.GameMode == GameMode.TimedDM)
+        {
+            UpdateTimer();
+        }
         // if > 25 kills, or time, or whatever
         // end game
     }

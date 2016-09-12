@@ -47,7 +47,7 @@ MonoBehaviour:
   maxFlags: 3
   Dificulty: 1
   maxTeamMembers: 5
-  onlyAI: 0
+  onlyAI: 1
 --- !u!114 &11457250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62,12 +62,13 @@ MonoBehaviour:
   spawnPoints: []
   playerPrefab: {fileID: 467012, guid: 83fdf5ced99e75c4aa1827295ce48b21, type: 2}
   robotPrefab: {fileID: 456372, guid: 98fa9a5fbc3767843991550dbac6e517, type: 2}
-  chickenPrefab: {fileID: 490184, guid: 9412b453b3a488b489fadade8d0b0020, type: 2}
+  chickenPrefab: {fileID: 481940, guid: 683977dcec57a34468ba20f526274cf0, type: 2}
   kamikazePrefab: {fileID: 474970, guid: c6a70f3b0bfdd224ab9c38c9f53c3a89, type: 2}
   redKills: 0
   blueKills: 0
   counter: 0
   flags: 3
+  gameRunning: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
