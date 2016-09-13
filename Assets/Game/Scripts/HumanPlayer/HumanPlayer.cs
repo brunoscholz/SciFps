@@ -6,7 +6,7 @@ using System;
 [RequireComponent(typeof(AudioSource))]
 public class HumanPlayer : MonoBehaviour, IPlayer
 {
-    Hud hud;
+    public Hud hud;
     Animator animator;
     Entity eRig;
     IShooter shooter;
@@ -89,7 +89,7 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
     void Awake()
     {
-        hud = GetComponent<Hud>();
+        //hud = GetComponent<Hud>();
         shooter = GetComponent<IShooter>();
         animator = GetComponent<Animator>();
         eRig = GetComponentInChildren<EntityRig>().Entity;
@@ -128,12 +128,17 @@ public class HumanPlayer : MonoBehaviour, IPlayer
         shooter.GunType = GunType;
     }
 
+    public void SetColors(Hud h)
+    {
+        hud = h;
+    }
+
     public void SetColors()
     {
         //transform.GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("albedo", TeamSets.Colors[Team.ToString()]);
-        SkinnedMeshRenderer rend = transform.GetComponentInChildren<SkinnedMeshRenderer>();
+        //SkinnedMeshRenderer rend = transform.GetComponentInChildren<SkinnedMeshRenderer>();
         //rend.material.shader = Shader.Find("Albedo");
-        rend.material.SetColor("_Color", TeamSets.Colors[Team.ToString()]);
+        //rend.material.SetColor("_Color", TeamSets.Colors[Team.ToString()]);
     }
 
     public void Respawn()

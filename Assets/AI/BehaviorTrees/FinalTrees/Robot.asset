@@ -18,7 +18,7 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; name=&quot;selector&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;start == true&quot;
       debugbreak=&quot;False&quot; constraint=&quot;start == true&quot;&gt;&lt;selector
-      usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;root&quot;
+      usepriorities=&quot;False&quot; repeatuntil=&quot;running&quot; name=&quot;root&quot;
       debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
       name=&quot;dead == false&quot; debugbreak=&quot;False&quot; constraint=&quot;dead
       == false&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;all&quot;

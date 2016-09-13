@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 401048}
   - 114: {fileID: 11457250}
   - 114: {fileID: 11451314}
+  - 114: {fileID: 11460252}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   maxFlags: 3
   Dificulty: 1
   maxTeamMembers: 5
-  onlyAI: 1
+  onlyAI: 0
 --- !u!114 &11457250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,6 +70,20 @@ MonoBehaviour:
   counter: 0
   flags: 3
   gameRunning: 0
+--- !u!114 &11460252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e073dd4308d3f441b7b877ddc719c53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalBullets: {fileID: 0}
+  currentBullets: {fileID: 0}
+  notification: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

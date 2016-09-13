@@ -64,8 +64,10 @@ public class GameManager : MonoBehaviour
         {
             // Create player in a random Team
             TeamName pTeam = (TeamName)UnityEngine.Random.Range(0, 1);
-            HumanPlayer human = (Instantiate(playerPrefab, TeamSets.Spots[pTeam.ToString()], Quaternion.identity) as GameObject).GetComponent<HumanPlayer>();
+            Transform go = Instantiate(playerPrefab, TeamSets.Spots[pTeam.ToString()], Quaternion.identity) as Transform;
+            HumanPlayer human = go.GetComponent<HumanPlayer>();
             human.SetUpPlayer(pTeam, 0);
+            human.SetColors(GetComponent<Hud>());
             Teams[pTeam.ToString()].Add(human);
         }
 

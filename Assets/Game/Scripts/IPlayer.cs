@@ -15,6 +15,7 @@ public interface IPlayer
 
     void SetUpPlayer(TeamName t, int id);
     void SetColors();
+    void SetColors(Hud h);
     void Respawn();
     void SetCommander(GameObject go);
     void SetCommand(string action);

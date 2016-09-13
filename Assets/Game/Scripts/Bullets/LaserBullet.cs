@@ -25,6 +25,12 @@ public class LaserBullet : MonoBehaviour
         
     }
 
+    void SetTeam(TeamName t)
+    {
+        Team = t;
+        GetComponent<ParticleSystem>().startColor = TeamSets.Colors[Team.ToString()];
+    }
+
     public void Shot(Hit shot, bool human = false)
     {
         ray = new Ray(transform.position, transform.forward);
@@ -32,19 +38,23 @@ public class LaserBullet : MonoBehaviour
         {
             StartCoroutine(FireLaser());
 
-            if (hit.transform.tag == "Enemy")
+            if (hit.transform.tag == "Robot")
             {
                 Debug.Log("<color=blue>Normal Hit to an enemy!</color>");
                 //Hit shot = new Hit(owner, "normal", false, hit);
-                //shot.SetDamage(30);
+                shot.SetDamage(shot.Damage);
                 hit.transform.GetComponent<IPlayer>().Hit(shot);
+                if (human)
+                    hit.transform.GetComponent<IPlayer>().TakeDamage(shot);
             }
-            else if (hit.transform.tag == "EnemyHead")
+            else if (hit.transform.tag == "RobotHead")
             {
                 Debug.Log("<color=red>HEADSHOT!!!</color>");
                 //Hit shot = new Hit(owner, "headshot", false, hit);
                 shot.SetDamage(shot.Damage * 7.5f);
                 hit.transform.GetComponentInParent<IPlayer>().Hit(shot);
+                if (human)
+                    hit.transform.GetComponent<IPlayer>().TakeDamage(shot);
                 //owner.DidHeadshot();
             }
             else
@@ -54,6 +64,7 @@ public class LaserBullet : MonoBehaviour
                     Instantiate(HitWallParticle, hit.point + (hit.normal * 0.2f), Quaternion.FromToRotation(Vector3.up, hit.normal)); //Quaternion.LookRotation(hit.normal)
                 }
             }
+
         }
         else
             StartCoroutine(FireLaser(true));
@@ -79,7 +90,7 @@ public class LaserBullet : MonoBehaviour
         //}
 
         //line.enabled = false;
-        yield return new WaitForSeconds(0.45f);
+        yield return new WaitForSeconds(0.25f);
         Destroy(gameObject);
     }
 }

@@ -115,6 +115,8 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         rend.material.SetColor("_Color", TeamSets.Colors[Team.ToString()]);
     }
 
+    public void SetColors(Hud h) { }
+
     public void Respawn()
     {
         SetAction("dead", false);
@@ -172,7 +174,7 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
         // Shoot
         LaserBullet bt = shooter.Shoot();
-        if(bt)
+        if(bt && target.Team != Team)
         {
             bt.Shot(shot);
 
