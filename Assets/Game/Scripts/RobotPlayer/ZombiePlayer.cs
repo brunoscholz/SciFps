@@ -225,11 +225,11 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         SetAction("dead", true);
         eRig.DeactivateEntity();
         animator.SetFloat("Speed", 0);
-        yield return new WaitForSeconds(5);
-
-        SetAction("start", false);
-
         GameManager manager = GameObject.FindObjectOfType<GameManager>();
         manager.ReportDown(this);
+
+        yield return new WaitForSeconds(5);
+        SetAction("start", false);
+        manager.Respawn(this);
     }
 }

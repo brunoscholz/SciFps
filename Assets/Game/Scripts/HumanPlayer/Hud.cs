@@ -8,6 +8,16 @@ public class Hud : MonoBehaviour
     public Text currentBullets;
     public Text notification;
 
+    public Text redScore;
+    public Text blueScore;
+    public Text redFlags;
+    public Text blueFlags;
+
+    public Text timer;
+
+    public Image crosshair;
+    public GameObject weapon;
+
     public IEnumerator ShowNotification(string txt)
     {
         notification.text = txt;
