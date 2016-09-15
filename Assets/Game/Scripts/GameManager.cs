@@ -6,6 +6,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     GameOptions options;
+    Hud hud;
 
     public List<Transform> spawnPoints = new List<Transform>();
     public Dictionary<string, List<IPlayer>> Teams = new Dictionary<string, List<IPlayer>> { { "blue", new List<IPlayer>() }, { "red", new List<IPlayer>() } };
@@ -14,8 +15,12 @@ public class GameManager : MonoBehaviour
     public Transform chickenPrefab;
     public Transform kamikazePrefab;
 
-    public int redKills = 0;
-    public int blueKills = 0;
+    /// <summary>
+    /// "blue" counts the dead red
+    /// "red" counts the dead blue
+    /// </summary>
+    public Dictionary<string, int> Score = new Dictionary<string, int> { { "blue", 0 }, { "red", 0 } };
+    public Dictionary<string, int> ScoreFlag = new Dictionary<string, int> { { "blue", 0 }, { "red", 0 } };
 
     public TimeSpan timer;
     public int counter = 0;
@@ -27,6 +32,7 @@ public class GameManager : MonoBehaviour
     {
         // do the setup
         options = GetComponent<GameOptions>();
+        hud = GetComponent<Hud>();
         Setup();
         CreateTeams();
         StartCoroutine(StartGame());
@@ -34,23 +40,40 @@ public class GameManager : MonoBehaviour
 
     void Setup()
     {
+        Score["blue"] = 0;
+        Score["red"] = 0;
+
         if (options.GameMode == GameMode.TimedDM)
         {
             timer = TimeSpan.FromMinutes(options.maxTime);
             counter = 0;
             flags = 0;
+            hud.blueFlags.transform.parent.gameObject.SetActive(false);
+            hud.redFlags.transform.parent.gameObject.SetActive(false);
         }
         else if (options.GameMode == GameMode.CountDM)
         {
             timer = TimeSpan.Zero;
             counter = options.maxKills;
             flags = 0;
+            hud.timer.text = "--:--";
+            hud.blueFlags.transform.parent.gameObject.SetActive(false);
+            hud.redFlags.transform.parent.gameObject.SetActive(false);
         }
         else
         {
             timer = TimeSpan.Zero;
             counter = 0;
             flags = options.maxFlags;
+            hud.timer.text = "--:--";
+            hud.blueFlags.transform.parent.gameObject.SetActive(true);
+            hud.redFlags.transform.parent.gameObject.SetActive(true);
+        }
+
+        if(options.onlyAI)
+        {
+            hud.crosshair.enabled = false;
+            hud.weapon.SetActive(false);
         }
     }
 
@@ -63,11 +86,14 @@ public class GameManager : MonoBehaviour
         if (!options.onlyAI)
         {
             // Create player in a random Team
-            TeamName pTeam = (TeamName)UnityEngine.Random.Range(0, 1);
-            Transform go = Instantiate(playerPrefab, TeamSets.Spots[pTeam.ToString()], Quaternion.identity) as Transform;
-            HumanPlayer human = go.GetComponent<HumanPlayer>();
+            TeamName pTeam = (TeamName)(UnityEngine.Random.Range(0, 100) % 2);
+            Debug.Log(pTeam);
+            playerPrefab.gameObject.SetActive(true);
+            playerPrefab.position = TeamSets.Spots[pTeam.ToString()];
+
+            HumanPlayer human = playerPrefab.GetComponent<HumanPlayer>();
             human.SetUpPlayer(pTeam, 0);
-            human.SetColors(GetComponent<Hud>());
+            human.SetColors(hud);
             Teams[pTeam.ToString()].Add(human);
         }
 
@@ -127,6 +153,11 @@ public class GameManager : MonoBehaviour
 
     public void ReportDown(IPlayer player)
     {
+        Score[player.Team.ToString()]++;
+    }
+
+    public void Respawn(IPlayer player)
+    {
         Vector3 pos = TeamSets.Spots[player.Team.ToString()];
         pos.x += 3 * player.teamID;
 
@@ -150,29 +181,55 @@ public class GameManager : MonoBehaviour
         if (!gameRunning)
             return;
 
-        if (options.GameMode == GameMode.TimedDM)
-        {
-            UpdateTimer();
-        }
+        hud.redScore.text = Score["blue"].ToString();
+        hud.blueScore.text = Score["red"].ToString();
+
+        UpdateTimer();
+
         // if > 25 kills, or time, or whatever
         // end game
     }
 
     void UpdateTimer()
     {
-        timer -= TimeSpan.FromSeconds(Time.deltaTime);
-
-        if (timer < TimeSpan.Zero)
+        if (options.GameMode == GameMode.TimedDM)
         {
-            EndGame();
-            timer = TimeSpan.Zero;
-        }
+            timer -= TimeSpan.FromSeconds(Time.deltaTime);
 
-        //timeText.text = string.Format("{0:D2}:{1:D2}", timer.Minutes, timer.Seconds);
+            hud.timer.text = string.Format("{0:D2}:{1:D2}", timer.Minutes, timer.Seconds);
+
+            if (timer < TimeSpan.Zero)
+            {
+                EndGame();
+                timer = TimeSpan.Zero;
+            }
+        }
+    }
+
+    void UpdateCounter()
+    {
+        if (options.GameMode == GameMode.CountDM)
+        {
+            if (Score["blue"] >= counter || Score["red"] >= counter)
+            {
+                EndGame();
+            }
+        }
+    }
+
+    void UpdateFlagger()
+    {
+        if (options.GameMode == GameMode.CaptureFlag)
+        {
+            if (ScoreFlag["blue"] >= flags || ScoreFlag["red"] >= flags)
+            {
+                EndGame();
+            }
+        }
     }
 
     void EndGame()
     {
-
+        // deactivate all
     }
 }
