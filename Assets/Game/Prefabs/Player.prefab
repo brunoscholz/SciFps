@@ -296,7 +296,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0.115942, b: 1, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -891,7 +891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: b61f0d8d8244b4b28aa66b0c8cb46a8d, type: 3}
   converted3DLut: {fileID: 0}
-  basedOnTempTex: Assets/Cinema Suite/Cinema Themes/LUTs/War3D16.png
+  basedOnTempTex: Assets/Cinema Suite/Cinema Themes/LUTs/Intensity3D16.png
 --- !u!114 &11440324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -907,12 +907,22 @@ MonoBehaviour:
   adaptiveTextureSize: 256
   remapCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 2
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  exposureAdjustment: 2.06
-  middleGrey: 0.25
+  exposureAdjustment: 6.79
+  middleGrey: 0.3
   white: 2
   adaptionSpeed: 2
   tonemapper: {fileID: 4800000, guid: 003377fc2620a44939dadde6fe3f8190, type: 3}
@@ -929,8 +939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   threshold: 0.25
-  intensity: 0.12
-  blurSize: 1
+  intensity: 0.48
+  blurSize: 3.11
   blurIterations: 1
   blurType: 0
   fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}

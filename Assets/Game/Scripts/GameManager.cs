@@ -86,10 +86,13 @@ public class GameManager : MonoBehaviour
         if (!options.onlyAI)
         {
             // Create player in a random Team
-            TeamName pTeam = (TeamName)(UnityEngine.Random.Range(0, 100) % 2);
-            Debug.Log(pTeam);
+            int rand = UnityEngine.Random.Range(0, 100) % 2;
+            TeamName pTeam = (TeamName)rand;
+
             playerPrefab.gameObject.SetActive(true);
             playerPrefab.position = TeamSets.Spots[pTeam.ToString()];
+            playerPrefab.eulerAngles = playerPrefab.eulerAngles + 180f * rand * Vector3.up;
+
 
             HumanPlayer human = playerPrefab.GetComponent<HumanPlayer>();
             human.SetUpPlayer(pTeam, 0);

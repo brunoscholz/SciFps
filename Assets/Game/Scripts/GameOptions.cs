@@ -22,6 +22,6 @@ public class TeamSets
     public static Vector3 LIMBO_POSITION = new Vector3(-200, 0, -200);
 }
 
-public enum TeamName { red, blue }
+public enum TeamName { blue, red }
 public enum GameMode { TimedDM, CountDM, CaptureFlag }
 public enum Dificulty { Easy, Medium, Hard }
