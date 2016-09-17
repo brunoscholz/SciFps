@@ -16,7 +16,7 @@ MonoBehaviour:
       value="&lt;behaviortree version=&quot;1.1&quot; repeatuntil=&quot;&quot; name=&quot;DefaultPatrol&quot;
       debugbreak=&quot;False&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;all&quot;
       repeatuntil=&quot;&quot; name=&quot;Patrol&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
-      repeatuntil=&quot;&quot; parametervalues=&quot;ADI1ADIAMgB3YW5kZXJNb3ZlVGFyZ2V0AHBhdHJvbFNwZWVkAHRydWU=&quot;
+      repeatuntil=&quot;&quot; parametervalues=&quot;ADI1ADIANAB3YW5kZXJNb3ZlVGFyZ2V0AHBhdHJvbFNwZWVkAHRydWU=&quot;
       parameters=&quot;Q2xvc2VFbm91Z2hEaXN0YW5jZQBNYXhEaXN0YW5jZQBXYWxrU3BlZWQAUnVuU3BlZWQATW92ZVRhcmdldFZhcmlhYmxlAE1vdmVTcGVlZFZhcmlhYmxlAFN0YXlPbkdyYXBo&quot;
       namespace=&quot;&quot; name=&quot;Choose Wander Position&quot; debugbreak=&quot;False&quot;
       classname=&quot;ChooseWanderPosition&quot; /&gt;&lt;move turnspeed=&quot;&quot;

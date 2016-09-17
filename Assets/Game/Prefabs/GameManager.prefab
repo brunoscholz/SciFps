@@ -341,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &191422
 GameObject:
   m_ObjectHideFlags: 1
@@ -821,7 +821,7 @@ MonoBehaviour:
   playerPrefab: {fileID: 0}
   robotPrefab: {fileID: 481940, guid: cffe9bd50b0b5c14280db183951f6f06, type: 2}
   chickenPrefab: {fileID: 481940, guid: 683977dcec57a34468ba20f526274cf0, type: 2}
-  kamikazePrefab: {fileID: 474970, guid: c6a70f3b0bfdd224ab9c38c9f53c3a89, type: 2}
+  kamikazePrefab: {fileID: 429992, guid: b17eb921a9a40e64f9db23fce6a24be5, type: 2}
   counter: 0
   flags: 3
   gameRunning: 0
