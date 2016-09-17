@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public Dictionary<string, int> Score = new Dictionary<string, int> { { "blue", 0 }, { "red", 0 } };
     public Dictionary<string, int> ScoreFlag = new Dictionary<string, int> { { "blue", 0 }, { "red", 0 } };
+    public Dictionary<string, Vector3> TeamBase = new Dictionary<string, Vector3> { { "blue", new Vector3(9, 0, -31) }, { "red", new Vector3(-9, 0, 31) } };
 
     public TimeSpan timer;
     public int counter = 0;
@@ -133,6 +134,11 @@ public class GameManager : MonoBehaviour
             zombie.SetCommander(gameObject);
             Teams["blue"].Add(zombie);
         }
+    }
+
+    public Vector3 GetTeamBase(TeamName t)
+    {
+        return TeamBase[t.ToString()];
     }
 
     IEnumerator StartGame ()

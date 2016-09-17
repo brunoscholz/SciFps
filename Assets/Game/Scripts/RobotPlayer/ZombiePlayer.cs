@@ -112,7 +112,7 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         //transform.GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("albedo", TeamSets.Colors[Team.ToString()]);
         SkinnedMeshRenderer rend = transform.GetComponentInChildren<SkinnedMeshRenderer>();
         //rend.material.shader = Shader.Find("Albedo");
-        rend.material.SetColor("_Color", TeamSets.Colors[Team.ToString()]);
+        rend.material.SetColor("_EmissionColor", TeamSets.Colors[Team.ToString()]);
     }
 
     public void SetColors(Hud h) { }

@@ -819,7 +819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoints: []
   playerPrefab: {fileID: 0}
-  robotPrefab: {fileID: 456372, guid: 98fa9a5fbc3767843991550dbac6e517, type: 2}
+  robotPrefab: {fileID: 481940, guid: cffe9bd50b0b5c14280db183951f6f06, type: 2}
   chickenPrefab: {fileID: 481940, guid: 683977dcec57a34468ba20f526274cf0, type: 2}
   kamikazePrefab: {fileID: 474970, guid: c6a70f3b0bfdd224ab9c38c9f53c3a89, type: 2}
   counter: 0

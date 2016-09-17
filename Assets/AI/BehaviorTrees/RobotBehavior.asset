@@ -25,32 +25,36 @@ MonoBehaviour:
       Sensor&amp;quot;&quot; repeatuntil=&quot;&quot; name=&quot;detect&quot; matchtype=&quot;best&quot;
       entityobjectvariable=&quot;myCommander&quot; debugbreak=&quot;False&quot; consistent=&quot;True&quot;
       aspectvariable=&quot;&quot; aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;defCommander&amp;quot;&quot;
-      /&gt;&lt;/constraint&gt;&lt;treebinding repeatuntil=&quot;running&quot; name=&quot;DetectAnSetEnemyPosition&quot;
-      debugbreak=&quot;False&quot; binding=&quot;DetectEnemyThreat&quot; /&gt;&lt;selector
-      usepriorities=&quot;False&quot; repeatuntil=&quot;running&quot; name=&quot;Do
-      Command Behavior&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot;
-      priority=&quot;&quot; name=&quot;command == &amp;quot;patrol&amp;quot;&quot;
+      /&gt;&lt;/constraint&gt;&lt;treebinding repeatuntil=&quot;running&quot; name=&quot;DetectLifeAndAmmo&quot;
+      debugbreak=&quot;False&quot; binding=&quot;DetectLifeAndAmmo&quot; /&gt;&lt;treebinding
+      repeatuntil=&quot;running&quot; name=&quot;DetectAnSetEnemyPosition&quot; debugbreak=&quot;False&quot;
+      binding=&quot;DetectEnemyThreat&quot; /&gt;&lt;selector usepriorities=&quot;False&quot;
+      repeatuntil=&quot;running&quot; name=&quot;Do Command Behavior&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;command == &amp;quot;patrol&amp;quot;&quot;
       debugbreak=&quot;False&quot; constraint=&quot;command == &amp;quot;patrol&amp;quot;&quot;&gt;&lt;treebinding
       repeatuntil=&quot;&quot; name=&quot;Patrol&quot; debugbreak=&quot;False&quot;
       binding=&quot;DefaultPatrol&quot; /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
       priority=&quot;&quot; name=&quot;command == &amp;quot;attack&amp;quot;&quot;
       debugbreak=&quot;False&quot; constraint=&quot;command == &amp;quot;attack&amp;quot;&quot;&gt;&lt;treebinding
       repeatuntil=&quot;&quot; name=&quot;Attack&quot; debugbreak=&quot;False&quot;
-      binding=&quot;DefaultAttack&quot; /&gt;&lt;/constraint&gt;&lt;sequencer usepriorities=&quot;False&quot;
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;default behavior&quot;
-      debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;command == null&quot;
-      expression=&quot;command == &amp;quot;&amp;quot;&quot; debugbreak=&quot;False&quot;
-      /&gt;&lt;expression returnvalue=&quot;success&quot; repeatuntil=&quot;&quot;
-      priority=&quot;&quot; name=&quot;command = &amp;quot;patrol&amp;quot;&quot;
+      binding=&quot;DefaultAttack&quot; /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;command == &amp;quot;heal&amp;quot;&quot; debugbreak=&quot;False&quot;
+      constraint=&quot;command == &amp;quot;heal&amp;quot;&quot; /&gt;&lt;sequencer
+      usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+      name=&quot;default behavior&quot; debugbreak=&quot;False&quot;&gt;&lt;expression
+      returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
+      name=&quot;command == null&quot; expression=&quot;command == &amp;quot;&amp;quot;&quot;
+      debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;command = &amp;quot;patrol&amp;quot;&quot;
       expression=&quot;command = &amp;quot;patrol&amp;quot;&quot; debugbreak=&quot;False&quot;
       /&gt;&lt;/sequencer&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;treebinding
       repeatuntil=&quot;running&quot; priority=&quot;&quot; name=&quot;Death&quot;
       debugbreak=&quot;False&quot; binding=&quot;Death&quot; /&gt;&lt;/selector&gt;&lt;/behaviortree&gt;"
       type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
-      elementtype="System.String"><field value="DetectEnemyThreat" type="System.String"
-      id="element0" /><field value="DefaultPatrol" type="System.String" id="element1"
-      /><field value="DefaultAttack" type="System.String" id="element2" /><field value="Death"
-      type="System.String" id="element3" /></field></fields><references /></scriptableobject>
+      elementtype="System.String"><field value="DetectLifeAndAmmo" type="System.String"
+      id="element0" /><field value="DetectEnemyThreat" type="System.String" id="element1"
+      /><field value="DefaultPatrol" type="System.String" id="element2" /><field value="DefaultAttack"
+      type="System.String" id="element3" /><field value="Death" type="System.String"
+      id="element4" /></field></fields><references /></scriptableobject>
     _serializedGameObjects: []
     _serializedCustomData: []

@@ -1,0 +1,1047 @@
+fileFormatVersion: 2
+guid: bb773f99480ad764295f10bad002bb67
+timeCreated: 1474089606
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: fp_arms_mc_h2
+    100002: //RootNode
+    100004: frame bolt
+    100006: frame bone24
+    100008: frame gun
+    100010: frame l forearm
+    100012: frame l index low
+    100014: frame l index mid
+    100016: frame l index tip
+    100018: frame l middle mid
+    100020: frame l middle tip
+    100022: frame l middlelow
+    100024: frame l pinky low
+    100026: frame l pinky mid
+    100028: frame l pinky tip
+    100030: frame l ring low
+    100032: frame l ring mid
+    100034: frame l ring tip
+    100036: frame l thumb low
+    100038: frame l thumb mid
+    100040: frame l thumb tip
+    100042: frame l upperarm
+    100044: frame l wriste
+    100046: frame mag
+    100048: frame port
+    100050: frame r forearm
+    100052: frame r index low
+    100054: frame r index mid
+    100056: frame r index tip
+    100058: frame r middle low
+    100060: frame r middle mid
+    100062: frame r middle tip
+    100064: frame r pinky low
+    100066: frame r pinky mid
+    100068: frame r pinky tip
+    100070: frame r ring low
+    100072: frame r ring mid
+    100074: frame r ring tip
+    100076: frame r thumb low
+    100078: frame r thumb mid
+    100080: frame r thumb tip
+    100082: frame r upperarm
+    100084: frame r wriste
+    100086: frame safe
+    100088: Left Wrist Controller
+    100090: Left Wrist IK Goal
+    100092: model.base
+    100094: model.mag
+    100096: model.numbers
+    100098: model.ophandle
+    100100: model.port
+    100102: model.safety
+    100104: Right Wrist Controller
+    100106: Right Wrist IK Goal
+    400000: fp_arms_mc_h2
+    400002: //RootNode
+    400004: frame bolt
+    400006: frame bone24
+    400008: frame gun
+    400010: frame l forearm
+    400012: frame l index low
+    400014: frame l index mid
+    400016: frame l index tip
+    400018: frame l middle mid
+    400020: frame l middle tip
+    400022: frame l middlelow
+    400024: frame l pinky low
+    400026: frame l pinky mid
+    400028: frame l pinky tip
+    400030: frame l ring low
+    400032: frame l ring mid
+    400034: frame l ring tip
+    400036: frame l thumb low
+    400038: frame l thumb mid
+    400040: frame l thumb tip
+    400042: frame l upperarm
+    400044: frame l wriste
+    400046: frame mag
+    400048: frame port
+    400050: frame r forearm
+    400052: frame r index low
+    400054: frame r index mid
+    400056: frame r index tip
+    400058: frame r middle low
+    400060: frame r middle mid
+    400062: frame r middle tip
+    400064: frame r pinky low
+    400066: frame r pinky mid
+    400068: frame r pinky tip
+    400070: frame r ring low
+    400072: frame r ring mid
+    400074: frame r ring tip
+    400076: frame r thumb low
+    400078: frame r thumb mid
+    400080: frame r thumb tip
+    400082: frame r upperarm
+    400084: frame r wriste
+    400086: frame safe
+    400088: Left Wrist Controller
+    400090: Left Wrist IK Goal
+    400092: model.base
+    400094: model.mag
+    400096: model.numbers
+    400098: model.ophandle
+    400100: model.port
+    400102: model.safety
+    400104: Right Wrist Controller
+    400106: Right Wrist IK Goal
+    2300000: frame bolt
+    2300002: frame gun
+    2300004: frame mag
+    2300006: frame port
+    2300008: model.base
+    2300010: model.mag
+    2300012: model.numbers
+    2300014: model.ophandle
+    2300016: model.port
+    2300018: model.safety
+    3300000: frame bolt
+    3300002: frame gun
+    3300004: frame mag
+    3300006: frame port
+    3300008: model.base
+    3300010: model.mag
+    3300012: model.numbers
+    3300014: model.ophandle
+    3300016: model.port
+    3300018: model.safety
+    4300000: fp_arms_mc_h2
+    4300002: frame gun
+    4300004: frame port
+    4300006: model.port
+    4300008: frame bolt
+    4300010: model.ophandle
+    4300012: frame mag
+    4300014: model.mag
+    4300016: model.safety
+    4300018: model.base
+    4300020: model.numbers
+    7400000: Walk
+    7400002: meleeAtack
+    7400004: Run
+    7400006: Fire
+    7400008: damageTaken
+    9500000: //RootNode
+    13700000: fp_arms_mc_h2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: meleeAtack
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame bone24
+        weight: 1
+      - path: frame bone24/fp_arms_mc_h2
+        weight: 1
+      - path: frame bone24/frame gun
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt/model.ophandle
+        weight: 1
+      - path: frame bone24/frame gun/frame mag
+        weight: 1
+      - path: frame bone24/frame gun/frame mag/model.mag
+        weight: 1
+      - path: frame bone24/frame gun/frame port
+        weight: 1
+      - path: frame bone24/frame gun/frame port/model.port
+        weight: 1
+      - path: frame bone24/frame gun/frame safe
+        weight: 1
+      - path: frame bone24/frame gun/frame safe/model.safety
+        weight: 1
+      - path: frame bone24/frame gun/model.base
+        weight: 1
+      - path: frame bone24/frame gun/model.numbers
+        weight: 1
+      - path: frame bone24/frame l upperarm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid/frame l index tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid/frame l middle tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid/frame l pinky tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid/frame l ring tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid/frame l thumb tip
+        weight: 1
+      - path: frame bone24/frame r upperarm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid/frame r index tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid/frame r middle tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid/frame r pinky tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid/frame r ring tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid/frame r thumb tip
+        weight: 1
+      - path: Left Wrist Controller
+        weight: 1
+      - path: Left Wrist Controller/Left Wrist IK Goal
+        weight: 1
+      - path: Right Wrist Controller
+        weight: 1
+      - path: Right Wrist Controller/Right Wrist IK Goal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 98
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame bone24
+        weight: 1
+      - path: frame bone24/fp_arms_mc_h2
+        weight: 1
+      - path: frame bone24/frame gun
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt/model.ophandle
+        weight: 1
+      - path: frame bone24/frame gun/frame mag
+        weight: 1
+      - path: frame bone24/frame gun/frame mag/model.mag
+        weight: 1
+      - path: frame bone24/frame gun/frame port
+        weight: 1
+      - path: frame bone24/frame gun/frame port/model.port
+        weight: 1
+      - path: frame bone24/frame gun/frame safe
+        weight: 1
+      - path: frame bone24/frame gun/frame safe/model.safety
+        weight: 1
+      - path: frame bone24/frame gun/model.base
+        weight: 1
+      - path: frame bone24/frame gun/model.numbers
+        weight: 1
+      - path: frame bone24/frame l upperarm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid/frame l index tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid/frame l middle tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid/frame l pinky tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid/frame l ring tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid/frame l thumb tip
+        weight: 1
+      - path: frame bone24/frame r upperarm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid/frame r index tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid/frame r middle tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid/frame r pinky tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid/frame r ring tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid/frame r thumb tip
+        weight: 1
+      - path: Left Wrist Controller
+        weight: 1
+      - path: Left Wrist Controller/Left Wrist IK Goal
+        weight: 1
+      - path: Right Wrist Controller
+        weight: 1
+      - path: Right Wrist Controller/Right Wrist IK Goal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 175
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame bone24
+        weight: 1
+      - path: frame bone24/fp_arms_mc_h2
+        weight: 1
+      - path: frame bone24/frame gun
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt/model.ophandle
+        weight: 1
+      - path: frame bone24/frame gun/frame mag
+        weight: 1
+      - path: frame bone24/frame gun/frame mag/model.mag
+        weight: 1
+      - path: frame bone24/frame gun/frame port
+        weight: 1
+      - path: frame bone24/frame gun/frame port/model.port
+        weight: 1
+      - path: frame bone24/frame gun/frame safe
+        weight: 1
+      - path: frame bone24/frame gun/frame safe/model.safety
+        weight: 1
+      - path: frame bone24/frame gun/model.base
+        weight: 1
+      - path: frame bone24/frame gun/model.numbers
+        weight: 1
+      - path: frame bone24/frame l upperarm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid/frame l index tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid/frame l middle tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid/frame l pinky tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid/frame l ring tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid/frame l thumb tip
+        weight: 1
+      - path: frame bone24/frame r upperarm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid/frame r index tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid/frame r middle tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid/frame r pinky tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid/frame r ring tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid/frame r thumb tip
+        weight: 1
+      - path: Left Wrist Controller
+        weight: 1
+      - path: Left Wrist Controller/Left Wrist IK Goal
+        weight: 1
+      - path: Right Wrist Controller
+        weight: 1
+      - path: Right Wrist Controller/Right Wrist IK Goal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fire
+      takeName: Take 001
+      firstFrame: 220
+      lastFrame: 245
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame bone24
+        weight: 1
+      - path: frame bone24/fp_arms_mc_h2
+        weight: 1
+      - path: frame bone24/frame gun
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt/model.ophandle
+        weight: 1
+      - path: frame bone24/frame gun/frame mag
+        weight: 1
+      - path: frame bone24/frame gun/frame mag/model.mag
+        weight: 1
+      - path: frame bone24/frame gun/frame port
+        weight: 1
+      - path: frame bone24/frame gun/frame port/model.port
+        weight: 1
+      - path: frame bone24/frame gun/frame safe
+        weight: 1
+      - path: frame bone24/frame gun/frame safe/model.safety
+        weight: 1
+      - path: frame bone24/frame gun/model.base
+        weight: 1
+      - path: frame bone24/frame gun/model.numbers
+        weight: 1
+      - path: frame bone24/frame l upperarm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid/frame l index tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid/frame l middle tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid/frame l pinky tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid/frame l ring tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid/frame l thumb tip
+        weight: 1
+      - path: frame bone24/frame r upperarm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid/frame r index tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid/frame r middle tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid/frame r pinky tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid/frame r ring tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid/frame r thumb tip
+        weight: 1
+      - path: Left Wrist Controller
+        weight: 1
+      - path: Left Wrist Controller/Left Wrist IK Goal
+        weight: 1
+      - path: Right Wrist Controller
+        weight: 1
+      - path: Right Wrist Controller/Right Wrist IK Goal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: damageTaken
+      takeName: Take 001
+      firstFrame: 250
+      lastFrame: 273
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: frame bone24
+        weight: 1
+      - path: frame bone24/fp_arms_mc_h2
+        weight: 1
+      - path: frame bone24/frame gun
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt
+        weight: 1
+      - path: frame bone24/frame gun/frame bolt/model.ophandle
+        weight: 1
+      - path: frame bone24/frame gun/frame mag
+        weight: 1
+      - path: frame bone24/frame gun/frame mag/model.mag
+        weight: 1
+      - path: frame bone24/frame gun/frame port
+        weight: 1
+      - path: frame bone24/frame gun/frame port/model.port
+        weight: 1
+      - path: frame bone24/frame gun/frame safe
+        weight: 1
+      - path: frame bone24/frame gun/frame safe/model.safety
+        weight: 1
+      - path: frame bone24/frame gun/model.base
+        weight: 1
+      - path: frame bone24/frame gun/model.numbers
+        weight: 1
+      - path: frame bone24/frame l upperarm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          index low/frame l index mid/frame l index tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          middlelow/frame l middle mid/frame l middle tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          pinky low/frame l pinky mid/frame l pinky tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          ring low/frame l ring mid/frame l ring tip
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid
+        weight: 1
+      - path: frame bone24/frame l upperarm/frame l forearm/frame l wriste/frame l
+          thumb low/frame l thumb mid/frame l thumb tip
+        weight: 1
+      - path: frame bone24/frame r upperarm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          index low/frame r index mid/frame r index tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          middle low/frame r middle mid/frame r middle tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          pinky low/frame r pinky mid/frame r pinky tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          ring low/frame r ring mid/frame r ring tip
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid
+        weight: 1
+      - path: frame bone24/frame r upperarm/frame r forearm/frame r wriste/frame r
+          thumb low/frame r thumb mid/frame r thumb tip
+        weight: 1
+      - path: Left Wrist Controller
+        weight: 1
+      - path: Left Wrist Controller/Left Wrist IK Goal
+        weight: 1
+      - path: Right Wrist Controller
+        weight: 1
+      - path: Right Wrist Controller/Right Wrist IK Goal
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

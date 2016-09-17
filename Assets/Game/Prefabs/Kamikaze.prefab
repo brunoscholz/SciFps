@@ -1944,7 +1944,8 @@ MonoBehaviour:
       type="RAIN.BehaviorTrees.BTAssetBinding" reference="4" id="element0" /><field
       type="RAIN.BehaviorTrees.BTAssetBinding" reference="5" id="element1" /><field
       type="RAIN.BehaviorTrees.BTAssetBinding" reference="6" id="element2" /><field
-      type="RAIN.BehaviorTrees.BTAssetBinding" reference="7" id="element3" /></field></reference><reference
+      type="RAIN.BehaviorTrees.BTAssetBinding" reference="7" id="element3" /><field
+      type="RAIN.BehaviorTrees.BTAssetBinding" reference="40" id="element4" /></field></reference><reference
       type="RAIN.BehaviorTrees.BTAssetBinding" refcount="1" id="4"><field value="DetectEnemyThreat"
       type="System.String" id="binding" /><field type="RAIN.BehaviorTrees.BTAsset"
       id="behaviorTree" gameobject="2" /></reference><reference type="RAIN.BehaviorTrees.BTAssetBinding"
@@ -1953,9 +1954,9 @@ MonoBehaviour:
       /></reference><reference type="RAIN.BehaviorTrees.BTAssetBinding" refcount="1"
       id="6"><field value="DefaultAttack" type="System.String" id="binding" /><field
       type="RAIN.BehaviorTrees.BTAsset" id="behaviorTree" gameobject="4" /></reference><reference
-      type="RAIN.BehaviorTrees.BTAssetBinding" refcount="1" id="7"><field value="Death"
+      type="RAIN.BehaviorTrees.BTAssetBinding" refcount="1" id="7"><field value="DetectLifeAndAmmo"
       type="System.String" id="binding" /><field type="RAIN.BehaviorTrees.BTAsset"
-      id="behaviorTree" gameobject="5" /></reference><reference type="RAIN.Motion.MecanimMotor"
+      id="behaviorTree" gameobject="8" /></reference><reference type="RAIN.Motion.MecanimMotor"
       refcount="1" id="8"><field value="2" type="System.Single" id="_speed" /><field
       value="180" type="System.Single" id="_rotationSpeed" /><field value="0.1" type="System.Single"
       id="_closeEnoughDistance" /><field value="0.1" type="System.Single" id="_closeEnoughAngle"
@@ -2103,16 +2104,20 @@ MonoBehaviour:
       id="_canDetectSelf" /><field value="360" type="System.Single" id="_horizontalAngle"
       /><field value="360" type="System.Single" id="_verticalAngle" /><field value="False"
       type="System.Boolean" id="_lineOfSight" /><field value="51" type="UnityEngine.LayerMask"
-      id="_lineOfSightMask" /></reference></references></component>
+      id="_lineOfSightMask" /></reference><reference type="RAIN.BehaviorTrees.BTAssetBinding"
+      refcount="1" id="40"><field value="Death" type="System.String" id="binding"
+      /><field type="RAIN.BehaviorTrees.BTAsset" id="behaviorTree" gameobject="5"
+      /></reference></references></component>
     _serializedGameObjects:
     - {fileID: 165036}
     - {fileID: 11400000, guid: 6a697b06aeb36224580edd5d07eb5c4e, type: 2}
     - {fileID: 11400000, guid: 4d7ae4d253ad971429b5318e88d2c6ae, type: 2}
-    - {fileID: 11400000, guid: c33bab1346007f547a73b9d0499a3739, type: 2}
+    - {fileID: 11400000, guid: 64bfc17920a32424493da72827ca8669, type: 2}
     - {fileID: 11400000, guid: 4ef86eca575be05468608eae1c44af3c, type: 2}
     - {fileID: 11400000, guid: 9038a33145fd3f4488b1c3dd5713ce5f, type: 2}
     - {fileID: 474970}
     - {fileID: 474970}
+    - {fileID: 11400000, guid: 512a16c720b4c124c94c900b9a7ecae1, type: 2}
     _serializedCustomData:
     - _data: 
       _stringData: Mg0K
