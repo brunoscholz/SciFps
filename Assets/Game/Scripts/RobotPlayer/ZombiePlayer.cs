@@ -119,8 +119,18 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
     public void Respawn()
     {
+        _health = 100;
+        animator.SetBool("Dead", false);
         SetAction("dead", false);
+        SetAction("enemyPosition", new Vector3());
+        SetCommand("patrol");
+        StartCoroutine(Reactivate());
+    }
+
+    IEnumerator Reactivate()
+    {
         eRig.ActivateEntity();
+        yield return new WaitForSeconds(0.5f);
         SetAction("start", true);
     }
 
