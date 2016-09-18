@@ -29,4 +29,5 @@ public interface IPlayer
     bool TakeDamage(Hit hit);
 
     void Hit(Hit hit);
+    void Eliminate();
 }

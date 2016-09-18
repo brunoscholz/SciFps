@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Transform chickenPrefab;
     public Transform kamikazePrefab;
 
+    private List<Transform> models = new List<Transform>();
+
     /// <summary>
     /// "blue" counts the dead red
     /// "red" counts the dead blue
@@ -34,6 +36,9 @@ public class GameManager : MonoBehaviour
         // do the setup
         options = GetComponent<GameOptions>();
         hud = GetComponent<Hud>();
+        models.Add(kamikazePrefab);
+        models.Add(chickenPrefab);
+
         Setup();
         CreateTeams();
         StartCoroutine(StartGame());
@@ -93,7 +98,7 @@ public class GameManager : MonoBehaviour
             playerPrefab.gameObject.SetActive(true);
             playerPrefab.position = TeamSets.Spots[pTeam.ToString()];
             playerPrefab.eulerAngles = playerPrefab.eulerAngles + 180f * rand * Vector3.up;
-
+            playerPrefab.name = pTeam.ToString() + "Human_01";
 
             HumanPlayer human = playerPrefab.GetComponent<HumanPlayer>();
             human.SetUpPlayer(pTeam, 0);
@@ -111,7 +116,10 @@ public class GameManager : MonoBehaviour
             if(options.maxTeamMembers > 5 && i > 4)
                 pos.y += 3;
 
-            Transform go = Instantiate(kamikazePrefab, pos, Quaternion.identity) as Transform;
+            int randModel = UnityEngine.Random.Range(0, models.Count);
+
+            Transform go = Instantiate(models[randModel], pos, Quaternion.identity) as Transform;
+            go.name = "red" + "Bot_0" + (i + 1);
             ZombiePlayer zombie = go.GetComponent<ZombiePlayer>();
             zombie.SetUpPlayer(TeamName.red, i);
             zombie.SetCommander(gameObject);
@@ -128,7 +136,9 @@ public class GameManager : MonoBehaviour
             if (options.maxTeamMembers > 5 && i > 4)
                 pos.y -= 3;
 
-            Transform go = Instantiate(kamikazePrefab, pos, Quaternion.identity) as Transform;
+            int randModel = UnityEngine.Random.Range(0, models.Count);
+            Transform go = Instantiate(models[randModel], pos, Quaternion.identity) as Transform;
+            go.name = "blue" + "Bot_0" + (i + 1);
             ZombiePlayer zombie = go.GetComponent<ZombiePlayer>();
             zombie.SetUpPlayer(TeamName.blue, i);
             zombie.SetCommander(gameObject);
@@ -173,8 +183,17 @@ public class GameManager : MonoBehaviour
         if (options.maxTeamMembers > 5 && player.teamID > 4)
             pos.y += 3;
 
-        player.Body.position = pos;
-        player.Respawn();
+
+        int randModel = UnityEngine.Random.Range(0, models.Count);
+        Transform go = Instantiate(models[randModel], pos, Quaternion.identity) as Transform;
+        go.name = player.Team.ToString() + "Bot_0" + (player.teamID + 1);
+        ZombiePlayer zombie = go.GetComponent<ZombiePlayer>();
+        zombie.SetUpPlayer(player.Team, player.teamID);
+        zombie.SetCommander(gameObject);
+
+        Teams[player.Team.ToString()][player.teamID] = zombie;
+        Teams[player.Team.ToString()][player.teamID].SetAction("start", true);
+        player.Eliminate();
     }
 
     public void AskForHelp(IPlayer needed, Vector3 target)

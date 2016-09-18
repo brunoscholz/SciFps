@@ -197,21 +197,16 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
     public bool TakeDamage(Hit hit)
     {
+        if (!IsAlive)
+            return false;
+
         if (!CanTakeDamage)
             return false;
 
-        // A very simple health
         _health = Mathf.Max(0, _health - hit.Damage);
 
-        if(!IsAlive)
+        if (!IsAlive)
             StartCoroutine(Die());
-
-        // Getting damage makes us invulnerable, but we can't attack either
-        if (hit.Damage > 0)
-        {
-            _incapacitatedTimer = Time.time + _incapacitationTime;
-            _invulnerableTimer = Time.time + _invulnerabilityTime;
-        }
 
         return hit.Damage > 0;
     }
@@ -241,5 +236,10 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         yield return new WaitForSeconds(5);
         SetAction("start", false);
         manager.Respawn(this);
+    }
+
+    public void Eliminate()
+    {
+        Destroy(gameObject);
     }
 }

@@ -47,7 +47,11 @@ MonoBehaviour:
       priority=&quot;&quot; name=&quot;command == &amp;quot;attack&amp;quot;&quot;
       debugbreak=&quot;False&quot; constraint=&quot;command == &amp;quot;attack&amp;quot;&quot;&gt;&lt;treebinding
       repeatuntil=&quot;&quot; name=&quot;Attack&quot; debugbreak=&quot;False&quot;
-      binding=&quot;DefaultAttack&quot; /&gt;&lt;/constraint&gt;&lt;sequencer usepriorities=&quot;False&quot;
+      binding=&quot;DefaultAttack&quot; /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;command == &amp;quot;investigate&amp;quot;&quot;
+      debugbreak=&quot;False&quot; constraint=&quot;command == &amp;quot;investigate&amp;quot;&quot;&gt;&lt;treebinding
+      repeatuntil=&quot;&quot; name=&quot;Investigate&quot; debugbreak=&quot;False&quot;
+      binding=&quot;Investigate&quot; /&gt;&lt;/constraint&gt;&lt;sequencer usepriorities=&quot;False&quot;
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;default behavior&quot;
       debugbreak=&quot;False&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;command == null&quot;
@@ -65,7 +69,8 @@ MonoBehaviour:
       type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
       elementtype="System.String"><field value="DetectEnemyThreat" type="System.String"
       id="element0" /><field value="DefaultPatrol" type="System.String" id="element1"
-      /><field value="DefaultAttack" type="System.String" id="element2" /><field value="Death"
-      type="System.String" id="element3" /></field></fields><references /></scriptableobject>
+      /><field value="DefaultAttack" type="System.String" id="element2" /><field value="Investigate"
+      type="System.String" id="element3" /><field value="Death" type="System.String"
+      id="element4" /></field></fields><references /></scriptableobject>
     _serializedGameObjects: []
     _serializedCustomData: []

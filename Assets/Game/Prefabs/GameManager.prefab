@@ -341,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &191422
 GameObject:
   m_ObjectHideFlags: 1
@@ -820,7 +820,7 @@ MonoBehaviour:
   spawnPoints: []
   playerPrefab: {fileID: 0}
   robotPrefab: {fileID: 481940, guid: cffe9bd50b0b5c14280db183951f6f06, type: 2}
-  chickenPrefab: {fileID: 481940, guid: 683977dcec57a34468ba20f526274cf0, type: 2}
+  chickenPrefab: {fileID: 429992, guid: 007a56f998195b847a0253f825070396, type: 2}
   kamikazePrefab: {fileID: 429992, guid: b17eb921a9a40e64f9db23fce6a24be5, type: 2}
   counter: 0
   flags: 3

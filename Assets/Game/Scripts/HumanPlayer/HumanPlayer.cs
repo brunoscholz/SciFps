@@ -7,7 +7,7 @@ using System;
 public class HumanPlayer : MonoBehaviour, IPlayer
 {
     public Hud hud;
-    Animator animator;
+    public Animator animator;
     Entity eRig;
     IShooter shooter;
 
@@ -91,7 +91,7 @@ public class HumanPlayer : MonoBehaviour, IPlayer
     {
         //hud = GetComponent<Hud>();
         shooter = GetComponent<IShooter>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         eRig = GetComponentInChildren<EntityRig>().Entity;
     }
 
@@ -105,10 +105,18 @@ public class HumanPlayer : MonoBehaviour, IPlayer
         if (Input.GetButtonDown("Fire1"))
         {
             Attack(null);
+            StartCoroutine(ShootAnim());
         }
 
         hud.totalBullets.text = shooter.Gun.ExtraAmmo.ToString();
         hud.currentBullets.text = shooter.Gun.AmmoInCurrentClip.ToString();
+    }
+
+    IEnumerator ShootAnim()
+    {
+        animator.SetBool("Fire", true);
+        yield return new WaitForSeconds(0.2f);
+        animator.SetBool("Fire", false);
     }
 
     public void DidHeadshot()
@@ -247,4 +255,6 @@ public class HumanPlayer : MonoBehaviour, IPlayer
     {
         
     }
+
+    public void Eliminate() { }
 }
