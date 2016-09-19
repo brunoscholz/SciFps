@@ -8,6 +8,11 @@ public class Pause : MonoBehaviour {
 	private bool isPaused;								//Boolean to check if the game is paused or not
 	private StartOptions startScript;					//Reference to the StartButton script
 	
+    public bool IsPaused
+    {
+        get { return isPaused; }
+    }
+
 	//Awake is called before Start()
 	void Awake()
 	{

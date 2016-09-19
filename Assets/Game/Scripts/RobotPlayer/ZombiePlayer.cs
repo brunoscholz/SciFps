@@ -169,7 +169,11 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         ai.WorkingMemory.SetItem(name, value);
     }
 
-    void Update () { }
+    void Update ()
+    {
+        if (_health < 0)
+            _health = 0;
+    }
 
     public bool Attack(IPlayer target)
     {
@@ -197,16 +201,16 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
     public bool TakeDamage(Hit hit)
     {
-        if (!IsAlive)
-            return false;
-
         if (!CanTakeDamage)
             return false;
 
         _health = Mathf.Max(0, _health - hit.Damage);
 
         if (!IsAlive)
+        {
+            _invulnerableTimer = Time.time + 4;
             StartCoroutine(Die());
+        }
 
         return hit.Damage > 0;
     }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     GameOptions options;
     Hud hud;
+    Pause pauseCtrl;
 
     public List<Transform> spawnPoints = new List<Transform>();
     public Dictionary<string, List<IPlayer>> Teams = new Dictionary<string, List<IPlayer>> { { "blue", new List<IPlayer>() }, { "red", new List<IPlayer>() } };
@@ -16,6 +17,11 @@ public class GameManager : MonoBehaviour
     public Transform kamikazePrefab;
 
     private List<Transform> models = new List<Transform>();
+
+    public bool isPaused
+    {
+        get { return pauseCtrl.IsPaused; }
+    }
 
     /// <summary>
     /// "blue" counts the dead red
@@ -38,6 +44,8 @@ public class GameManager : MonoBehaviour
         hud = GetComponent<Hud>();
         models.Add(kamikazePrefab);
         models.Add(chickenPrefab);
+
+        pauseCtrl = GameObject.FindObjectOfType<Pause>();
 
         Setup();
         CreateTeams();
