@@ -1264,6 +1264,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 452676}
   - 135: {fileID: 13569510}
+  - 114: {fileID: 11479832}
   m_Layer: 0
   m_Name: Recharge
   m_TagString: Untagged
@@ -1473,6 +1474,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 467150}
   - 135: {fileID: 13586722}
+  - 114: {fileID: 11446722}
   m_Layer: 0
   m_Name: Recharge
   m_TagString: Untagged
@@ -11132,6 +11134,30 @@ MonoBehaviour:
   randMin: -1
   randMax: 1
   flickrIntensity: 1
+--- !u!114 &11446722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1f34c79b2d1ca4788e5d6d315cd12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Team: 1
+--- !u!114 &11479832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1f34c79b2d1ca4788e5d6d315cd12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Team: 0
 --- !u!114 &11484860
 MonoBehaviour:
   m_ObjectHideFlags: 1
