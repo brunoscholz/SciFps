@@ -821,7 +821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &187972
 GameObject:
   m_ObjectHideFlags: 1
@@ -1540,7 +1540,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.18, y: 1, z: -33.95}
+  m_LocalPosition: {x: 9, y: 1, z: -43.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2640,7 +2640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: b61f0d8d8244b4b28aa66b0c8cb46a8d, type: 3}
   converted3DLut: {fileID: 0}
-  basedOnTempTex: Assets/Cinema Suite/Cinema Themes/LUTs/Intensity3D16.png
+  basedOnTempTex: Assets/Cinema Suite/Cinema Themes/LUTs/Action3D16.png
 --- !u!114 &11440324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2652,7 +2652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50e925fb93c78246bf995d9dc3a2330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
+  type: 2
   adaptiveTextureSize: 256
   remapCurve:
     serializedVersion: 2
@@ -2670,8 +2670,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  exposureAdjustment: 6.79
-  middleGrey: 0.3
+  exposureAdjustment: 1.27
+  middleGrey: 0.08
   white: 2
   adaptionSpeed: 2
   tonemapper: {fileID: 4800000, guid: 003377fc2620a44939dadde6fe3f8190, type: 3}
@@ -2687,9 +2687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4975a6e437fc3b149a8cd508ce5bdd69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  threshold: 0.533
-  intensity: 0.3
-  blurSize: 2.41
+  threshold: 0.218
+  intensity: 0.79
+  blurSize: 1.81
   blurIterations: 1
   blurType: 0
   fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
@@ -2708,8 +2708,8 @@ MonoBehaviour:
   animator: {fileID: 9537000}
   team: 1
   _health: 100
-  _damage: 45
-  _accuracy: 0.5
+  _damage: 20
+  _accuracy: 0.9
   _incapacitationTime: 1
   _invulnerabilityTime: 1
   HitParticle: {fileID: 100004, guid: be2f7e740cdbb0249909ff1e8d1bc501, type: 2}
@@ -2727,10 +2727,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
-  intensity: 0.074
-  chromaticAberration: 0.2
+  intensity: 0.244
+  chromaticAberration: 0.28
   axialAberration: 0.5
-  blur: 0.024
+  blur: 0.179
   blurSpread: 0.651
   luminanceDependency: 0.25
   blurDistance: 2.5

@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public Dictionary<string, int> Score = new Dictionary<string, int> { { "blue", 0 }, { "red", 0 } };
     public Dictionary<string, int> ScoreFlag = new Dictionary<string, int> { { "blue", 0 }, { "red", 0 } };
-    public Dictionary<string, Vector3> TeamBase = new Dictionary<string, Vector3> { { "blue", new Vector3(9, 0, -31) }, { "red", new Vector3(-9, 0, 31) } };
+    public Dictionary<string, Vector3> TeamBase = new Dictionary<string, Vector3> { { "blue", new Vector3(9, 0, -32f) }, { "red", new Vector3(-9, 0, 32f) } };
 
     public TimeSpan timer;
     public int counter = 0;
@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
 
             HumanPlayer human = playerPrefab.GetComponent<HumanPlayer>();
             human.SetUpPlayer(pTeam, 0);
+            human.SetCommander(gameObject);
             human.SetColors(hud);
             Teams[pTeam.ToString()].Add(human);
         }
@@ -122,11 +123,12 @@ public class GameManager : MonoBehaviour
             pos.x += 3 * i;
 
             if(options.maxTeamMembers > 5 && i > 4)
-                pos.y += 3;
+                pos.z += 3;
 
             int randModel = UnityEngine.Random.Range(0, models.Count);
 
             Transform go = Instantiate(models[randModel], pos, Quaternion.identity) as Transform;
+            go.eulerAngles = playerPrefab.eulerAngles + 180f * Vector3.up;
             go.name = "red" + "Bot_0" + (i + 1);
             ZombiePlayer zombie = go.GetComponent<ZombiePlayer>();
             zombie.SetUpPlayer(TeamName.red, i);
@@ -142,7 +144,7 @@ public class GameManager : MonoBehaviour
             pos.x -= 3 * i;
 
             if (options.maxTeamMembers > 5 && i > 4)
-                pos.y -= 3;
+                pos.z -= 3;
 
             int randModel = UnityEngine.Random.Range(0, models.Count);
             Transform go = Instantiate(models[randModel], pos, Quaternion.identity) as Transform;

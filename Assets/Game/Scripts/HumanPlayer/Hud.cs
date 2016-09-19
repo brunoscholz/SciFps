@@ -18,6 +18,9 @@ public class Hud : MonoBehaviour
     public Image crosshair;
     public GameObject weapon;
 
+    public Slider healthSlider;
+    public Text healthText;
+
     public IEnumerator ShowNotification(string txt)
     {
         notification.text = txt;

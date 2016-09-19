@@ -11,6 +11,8 @@ public class HumanPlayer : MonoBehaviour, IPlayer
     Entity eRig;
     IShooter shooter;
 
+    Vector3 initialPosition;
+
     public TeamName team = TeamName.blue;
     public TeamName Team
     {
@@ -51,7 +53,10 @@ public class HumanPlayer : MonoBehaviour, IPlayer
     public float Health
     {
         get { return _health; }
-        set { _health = value; }
+        set
+        {
+            _health = Mathf.Min(100, value);
+        }
     }
 
     public float Damage
@@ -88,15 +93,13 @@ public class HumanPlayer : MonoBehaviour, IPlayer
     public GunType GunType = GunType.Laser;
 
     void Awake()
-    {
-        //hud = GetComponent<Hud>();
-        shooter = GetComponent<IShooter>();
-        //animator = GetComponent<Animator>();
-        eRig = GetComponentInChildren<EntityRig>().Entity;
-    }
+    { }
 
     void FixedUpdate()
     {
+        if (!IsAlive || !gm.gameRunning)
+            return;
+
         if (Input.GetButtonDown("Reload"))
         {
             shooter.Reload();
@@ -110,6 +113,8 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
         hud.totalBullets.text = shooter.Gun.ExtraAmmo.ToString();
         hud.currentBullets.text = shooter.Gun.AmmoInCurrentClip.ToString();
+        hud.healthText.text = ((int)_health).ToString();
+        hud.healthSlider.value = _health;
     }
 
     IEnumerator ShootAnim()
@@ -126,6 +131,11 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
     public void SetUpPlayer(TeamName t, int id)
     {
+        //hud = GetComponent<Hud>();
+        shooter = GetComponent<IShooter>();
+        //animator = GetComponent<Animator>();
+        eRig = GetComponentInChildren<EntityRig>().Entity;
+
         Team = t;
         myID = id;
 
@@ -134,6 +144,7 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
         SetColors();
         shooter.GunType = GunType;
+        initialPosition = transform.position;
     }
 
     public void SetColors(Hud h)
@@ -180,12 +191,17 @@ public class HumanPlayer : MonoBehaviour, IPlayer
         // A very simple health
         _health = Mathf.Max(0, _health - hit.Damage);
 
-        // Getting damage makes us invulnerable, but we can't attack either
-        if (hit.Damage > 0)
+        if (!IsAlive)
         {
-            _incapacitatedTimer = Time.time + _incapacitationTime;
-            _invulnerableTimer = Time.time + _invulnerabilityTime;
+            StartCoroutine(Die());
         }
+
+        // Getting damage makes us invulnerable, but we can't attack either
+        //if (hit.Damage > 0)
+        //{
+        //    _incapacitatedTimer = Time.time + _incapacitationTime;
+        //    _invulnerableTimer = Time.time + _invulnerabilityTime;
+        //}
 
         return hit.Damage > 0;
     }
@@ -208,22 +224,20 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
     public IEnumerator Die()
     {
-        animator.SetFloat("Speed", 0);
+        gm.ReportDown(this);
+        yield return new WaitForSeconds(1);
+        _health = 100;
+        shooter.GunType = GunType.Laser;
 
-        animator.SetBool("Dead", true);
-        yield return null;
-        animator.SetBool("Dead", false);
-
-        foreach (Collider c in GetComponents<Collider>())
-        {
-            c.enabled = false;
-        }
-
-        Debug.Log("DIE MOTHERFUCKER!!!!");
-        Destroy(gameObject, 15f);
+        // Respawn
+        transform.position = initialPosition;
     }
 
-    public void SetCommander(GameObject go) { }
+    GameManager gm;
+    public void SetCommander(GameObject go)
+    {
+        gm = go.GetComponent<GameManager>();
+    }
 
     public void SetCommand(string action)
     {

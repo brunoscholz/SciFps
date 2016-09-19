@@ -52,7 +52,10 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
     public float Health
     {
         get { return _health; }
-        set { _health = value; }
+        set
+        {
+            _health = Mathf.Min(100, value);
+        }
     }
 
     public float Damage
