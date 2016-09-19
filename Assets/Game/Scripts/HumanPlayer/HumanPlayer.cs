@@ -175,6 +175,7 @@ public class HumanPlayer : MonoBehaviour, IPlayer
         LaserBullet bt = shooter.Shoot();
         if(bt)
         {
+            bt.SetTeam(Team);
             bt.Shot(shot, true);
 
         }

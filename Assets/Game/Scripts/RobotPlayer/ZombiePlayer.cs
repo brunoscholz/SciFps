@@ -193,6 +193,7 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         LaserBullet bt = shooter.Shoot();
         if(bt && target.Team != Team)
         {
+            bt.SetTeam(Team);
             bt.Shot(shot);
 
             // Do damage

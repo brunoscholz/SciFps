@@ -41,6 +41,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+        private Animator m_Animator;
 
         // Use this for initialization
         private void Start()
@@ -55,6 +56,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+            m_Animator = GetComponentInChildren<Animator>();
         }
 
 
@@ -65,7 +67,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                //m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -223,6 +225,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Input.Normalize();
             }
+
+            if (horizontal != 0f || vertical != 0f)
+            {
+                m_Animator.SetFloat("Speed", 2);
+            }
+            else
+                // Otherwise set the speed parameter to 0.
+                m_Animator.SetFloat("Speed", 0);
+
 
             // handle speed change to give an fov kick
             // only if the player is going to a run, is running and the fovkick is to be used

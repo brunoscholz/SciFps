@@ -25,7 +25,7 @@ public class LaserBullet : MonoBehaviour
         
     }
 
-    void SetTeam(TeamName t)
+    public void SetTeam(TeamName t)
     {
         Team = t;
         GetComponent<ParticleSystem>().startColor = TeamSets.Colors[Team.ToString()];

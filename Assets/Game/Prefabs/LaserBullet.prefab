@@ -25,7 +25,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199356}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.312, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitWallParticle: {fileID: 100000, guid: b8af2e705891f8941b1ed40cafd0536c, type: 2}
   shotPoint: {fileID: 0}
-  Team: 1
+  Team: 0
 --- !u!198 &19805162
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -465,17 +465,17 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    cnt0: 500
-    cnt1: 30
-    cnt2: 30
+    cnt0: 1000
+    cnt1: 1000
+    cnt2: 1000
     cnt3: 30
-    cntmax0: 500
-    cntmax1: 30
-    cntmax2: 30
+    cntmax0: 1000
+    cntmax1: 1000
+    cntmax2: 1000
     cntmax3: 30
     time0: 0
-    time1: 0
-    time2: 0
+    time1: 0.2
+    time2: 0.4
     time3: 0
     m_BurstCount: 0
   SizeModule:
