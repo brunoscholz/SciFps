@@ -201,6 +201,7 @@ GameObject:
   - 114: {fileID: 11440324}
   - 114: {fileID: 11465224}
   - 114: {fileID: 11439186}
+  - 124: {fileID: 12406618}
   m_Layer: 0
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
@@ -821,7 +822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &187972
 GameObject:
   m_ObjectHideFlags: 1
@@ -2640,7 +2641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: b61f0d8d8244b4b28aa66b0c8cb46a8d, type: 3}
   converted3DLut: {fileID: 0}
-  basedOnTempTex: Assets/Cinema Suite/Cinema Themes/LUTs/Action3D16.png
+  basedOnTempTex: Assets/Cinema Suite/Cinema Themes/LUTs/Matrix3D16.png
 --- !u!114 &11440324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2776,6 +2777,13 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     _serializedCustomData: []
+--- !u!124 &12406618
+Behaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 118884}
+  m_Enabled: 1
 --- !u!136 &13667280
 CapsuleCollider:
   m_ObjectHideFlags: 1

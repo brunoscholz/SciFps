@@ -6,7 +6,7 @@ public class FlickeringLight : MonoBehaviour
 {
     public float cycleDuration = 2f; // How long before looping back to the beginning of the curve
     public int keysCount = 10; // The number of keys
-    public float startVal = 1f; // The value around which the intensity will be randomized
+    public float startVal = 4f; // The value around which the intensity will be randomized
     public float randMin = -1f, randMax = 1f; // The min and max of the curve
     public float flickrIntensity = 1f; // The curve will be multiplied by that value and added to startVal	
     // You could use only the curve, but to change the light's behaviour you would need to
