@@ -44,7 +44,7 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
     private float _incapacitationTime = 1;
 
     [SerializeField]
-    private float _invulnerabilityTime = 1;
+    private float _invulnerabilityTime = 3;
 
     private float _incapacitatedTimer = float.MinValue;
     private float _invulnerableTimer = float.MinValue;
@@ -188,11 +188,13 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         Hit shot = new Hit(this, "normal", false);
         float tDamage = _damage - UnityEngine.Random.Range(0, Mathf.Clamp01(1 - _accuracy)) * _damage;
         shot.SetDamage(tDamage);
+        StartCoroutine(AttackAnim());
 
         // Shoot
         LaserBullet bt = shooter.Shoot();
         if(bt && target.Team != Team)
         {
+            //StartCoroutine(AttackAnim());
             bt.SetTeam(Team);
             bt.Shot(shot);
 
@@ -201,6 +203,13 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         }
 
         return tDamage > 0;
+    }
+
+    IEnumerator AttackAnim()
+    {
+        animator.SetBool("Attack", true);
+        yield return new WaitForSeconds(0.4f);
+        animator.SetBool("Attack", false);
     }
 
     public bool TakeDamage(Hit hit)
@@ -212,8 +221,9 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
         if (!IsAlive)
         {
-            _invulnerableTimer = Time.time + 4;
             StartCoroutine(Die());
+            _incapacitatedTimer = Time.time + _incapacitationTime;
+            _invulnerableTimer = Time.time + _invulnerabilityTime;
         }
 
         return hit.Damage > 0;

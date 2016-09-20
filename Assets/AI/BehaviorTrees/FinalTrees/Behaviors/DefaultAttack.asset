@@ -22,19 +22,20 @@ MonoBehaviour:
       /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;selector&quot;
       debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
       name=&quot;constraint&quot; debugbreak=&quot;False&quot; constraint=&quot;enemy
-      != null&quot;&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot;
-      movetarget=&quot;attackposition&quot; movespeed=&quot;2&quot; facetarget=&quot;&quot;
-      debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot;
-      /&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot;
-      movetarget=&quot;&quot; movespeed=&quot;&quot; facetarget=&quot;enemy&quot;
-      debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot;
-      /&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;all&quot; repeatuntil=&quot;&quot;
-      name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
+      != null&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;all&quot;
+      repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;move
+      turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;attackposition&quot;
+      movespeed=&quot;2&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
+      closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;move
+      turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;&quot;
+      movespeed=&quot;&quot; facetarget=&quot;enemy&quot; debugbreak=&quot;False&quot;
+      closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;action
       repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;&quot; name=&quot;Fire Attack&quot; debugbreak=&quot;False&quot;
-      classname=&quot;FireAttack&quot; /&gt;&lt;animate repeatuntil=&quot;&quot; name=&quot;animate&quot;
-      debugbreak=&quot;False&quot; animationstate=&quot;Base Layer.Attack&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
+      classname=&quot;FireAttack&quot; /&gt;&lt;animate repeatuntil=&quot;running&quot;
+      name=&quot;animate&quot; debugbreak=&quot;False&quot; animationstate=&quot;Attack&quot;
+      /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
       constraint=&quot;enemy == null&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
       repeatuntil=&quot;&quot; name=&quot;expression&quot; expression=&quot;command
       = null&quot; debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;

@@ -45,7 +45,7 @@ public class HumanPlayer : MonoBehaviour, IPlayer
     private float _incapacitationTime = 1;
 
     [SerializeField]
-    private float _invulnerabilityTime = 1;
+    private float _invulnerabilityTime = 3;
 
     private float _incapacitatedTimer = float.MinValue;
     private float _invulnerableTimer = float.MinValue;
@@ -195,6 +195,8 @@ public class HumanPlayer : MonoBehaviour, IPlayer
         if (!IsAlive)
         {
             StartCoroutine(Die());
+            _incapacitatedTimer = Time.time + _incapacitationTime;
+            _invulnerableTimer = Time.time + _invulnerabilityTime;
         }
 
         // Getting damage makes us invulnerable, but we can't attack either

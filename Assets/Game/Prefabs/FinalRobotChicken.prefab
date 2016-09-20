@@ -1997,11 +1997,11 @@ MonoBehaviour:
       id="0"><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_body" gameobject="0" /><field type="RAIN.Memory.BasicMemory" reference="1"
       id="_workingMemory" /><field type="RAIN.Minds.BasicMind" reference="3" id="_mind"
-      childrenvisible="True" /><field type="RAIN.Motion.MecanimMotor" reference="8"
+      childrenvisible="False" /><field type="RAIN.Motion.MecanimMotor" reference="8"
       id="_motor" /><field type="RAIN.Animation.MecanimAnimator" reference="10" id="_animator"
-      /><field type="RAIN.Navigation.BasicNavigator" reference="36" id="_navigator"
-      /><field type="RAIN.Perception.BasicSenses" reference="37" id="_senses" /><field
-      type="System.Collections.Generic.List" id="_customElements" elementtype="RAIN.Core.CustomAIElement"
+      childrenvisible="True" /><field type="RAIN.Navigation.BasicNavigator" reference="36"
+      id="_navigator" /><field type="RAIN.Perception.BasicSenses" reference="37" id="_senses"
+      /><field type="System.Collections.Generic.List" id="_customElements" elementtype="RAIN.Core.CustomAIElement"
       /></reference><reference type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field
       type="System.Collections.Generic.List" id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field
       type="RAIN.Memory.BasicMemory+MemoryItem" reference="2" id="element0" /></field></reference><reference
@@ -2096,12 +2096,12 @@ MonoBehaviour:
       id="parameterValue" /><field value="0" type="System.Single" id="dampTime" /></reference><reference
       type="RAIN.Representation.Expression" refcount="1" id="20" customdata="1" /><reference
       type="RAIN.Animation.MecanimAnimator+MecanimAnimatorState" refcount="1" id="21"><field
-      value="Base Layer.Attack" type="System.String" id="mecanimState" /><field value="0"
-      type="System.Int32" id="layer" /><field type="RAIN.Animation.MecanimParameterValue"
-      reference="22" id="startParameter" /><field type="RAIN.Animation.MecanimParameterValue"
-      reference="24" id="stopParameter" /></reference><reference type="RAIN.Animation.MecanimParameterValue"
-      refcount="1" id="22"><field value="Attack" type="System.String" id="parameterName"
-      /><field value="Boolean" type="RAIN.Animation.MecanimParameterValue+SupportedMecanimType"
+      value="Attack" type="System.String" id="mecanimState" /><field value="1" type="System.Int32"
+      id="layer" /><field type="RAIN.Animation.MecanimParameterValue" reference="22"
+      id="startParameter" childrenvisible="True" /><field type="RAIN.Animation.MecanimParameterValue"
+      reference="24" id="stopParameter" childrenvisible="True" /></reference><reference
+      type="RAIN.Animation.MecanimParameterValue" refcount="1" id="22"><field value="Attack"
+      type="System.String" id="parameterName" /><field value="Boolean" type="RAIN.Animation.MecanimParameterValue+SupportedMecanimType"
       id="parameterType" /><field type="RAIN.Representation.Expression" reference="23"
       id="parameterValue" /><field value="0" type="System.Single" id="dampTime" /></reference><reference
       type="RAIN.Representation.Expression" refcount="1" id="23" customdata="2" /><reference

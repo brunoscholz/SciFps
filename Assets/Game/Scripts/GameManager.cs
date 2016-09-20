@@ -104,6 +104,8 @@ public class GameManager : MonoBehaviour
             TeamName pTeam = (TeamName)rand;
 
             playerPrefab.gameObject.SetActive(true);
+            Vector3 pos = TeamSets.Spots[pTeam.ToString()];
+            pos.y = 1;
             playerPrefab.position = TeamSets.Spots[pTeam.ToString()];
             playerPrefab.eulerAngles = playerPrefab.eulerAngles + 180f * rand * Vector3.up;
             playerPrefab.name = pTeam.ToString() + "Human_01";
