@@ -140,18 +140,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11484472, guid: a0c635a010f98c141a86d6534e29c656, type: 2}
-      propertyPath: m_Color.r
-      value: 0.40392157
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484472, guid: a0c635a010f98c141a86d6534e29c656, type: 2}
-      propertyPath: m_Color.g
-      value: 0.8784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 11484472, guid: a0c635a010f98c141a86d6534e29c656, type: 2}
-      propertyPath: m_Color.b
-      value: 0.94509804
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0c635a010f98c141a86d6534e29c656, type: 2}
   m_IsPrefabParent: 0
@@ -194,15 +182,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11439186, guid: 83fdf5ced99e75c4aa1827295ce48b21, type: 2}
+      propertyPath: converted3DLut
+      value: 
+      objectReference: {fileID: 1284096829}
     - target: {fileID: 8222198, guid: 83fdf5ced99e75c4aa1827295ce48b21, type: 2}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 243000011034357240, guid: 885093b101b921f4ea662d6b219b5152,
         type: 2}
-    - target: {fileID: 11439186, guid: 83fdf5ced99e75c4aa1827295ce48b21, type: 2}
-      propertyPath: converted3DLut
-      value: 
-      objectReference: {fileID: 1284096829}
+    - target: {fileID: 11460164, guid: 83fdf5ced99e75c4aa1827295ce48b21, type: 2}
+      propertyPath: _damage
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 83fdf5ced99e75c4aa1827295ce48b21, type: 2}
   m_IsPrefabParent: 0

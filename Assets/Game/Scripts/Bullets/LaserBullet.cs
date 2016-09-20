@@ -10,7 +10,7 @@ public class LaserBullet : MonoBehaviour
     public Transform shotPoint;
     public TeamName Team = TeamName.blue;
 
-    float range = 1000;
+    float range = 200;
 
     RaycastHit hit;
     Ray ray;
@@ -43,7 +43,7 @@ public class LaserBullet : MonoBehaviour
                 Debug.Log("<color=blue>Normal Hit to an enemy!</color>");
                 //Hit shot = new Hit(owner, "normal", false, hit);
                 shot.SetDamage(shot.Damage);
-                hit.transform.GetComponent<IPlayer>().Hit(shot);
+                //hit.transform.GetComponent<IPlayer>().Hit(shot);
                 if (human)
                     hit.transform.GetComponent<IPlayer>().TakeDamage(shot);
             }
@@ -52,7 +52,7 @@ public class LaserBullet : MonoBehaviour
                 Debug.Log("<color=red>HEADSHOT!!!</color>");
                 //Hit shot = new Hit(owner, "headshot", false, hit);
                 shot.SetDamage(shot.Damage * 7.5f);
-                hit.transform.GetComponentInParent<IPlayer>().Hit(shot);
+                //hit.transform.GetComponentInParent<IPlayer>().Hit(shot);
                 if (human)
                     hit.transform.GetComponent<IPlayer>().TakeDamage(shot);
                 //owner.DidHeadshot();
@@ -90,7 +90,7 @@ public class LaserBullet : MonoBehaviour
         //}
 
         //line.enabled = false;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.15f);
         Destroy(gameObject);
     }
 }

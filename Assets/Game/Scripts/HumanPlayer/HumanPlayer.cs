@@ -2,6 +2,7 @@
 using System.Collections;
 using RAIN.Entities;
 using System;
+using UnityStandardAssets.ImageEffects;
 
 [RequireComponent(typeof(AudioSource))]
 public class HumanPlayer : MonoBehaviour, IPlayer
@@ -90,6 +91,8 @@ public class HumanPlayer : MonoBehaviour, IPlayer
     public GameObject HitParticle;
     public AudioClip HitSound;
 
+    public VignetteAndChromaticAberration vignette;
+
     public GunType GunType = GunType.Laser;
 
     void Awake()
@@ -135,6 +138,7 @@ public class HumanPlayer : MonoBehaviour, IPlayer
         shooter = GetComponent<IShooter>();
         //animator = GetComponent<Animator>();
         eRig = GetComponentInChildren<EntityRig>().Entity;
+        vignette = GetComponentInChildren<VignetteAndChromaticAberration>();
 
         Team = t;
         myID = id;
