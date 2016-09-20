@@ -188,13 +188,12 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
         Hit shot = new Hit(this, "normal", false);
         float tDamage = _damage - UnityEngine.Random.Range(0, Mathf.Clamp01(1 - _accuracy)) * _damage;
         shot.SetDamage(tDamage);
-        StartCoroutine(AttackAnim());
 
         // Shoot
         LaserBullet bt = shooter.Shoot();
         if(bt && target.Team != Team)
         {
-            //StartCoroutine(AttackAnim());
+            StartCoroutine(AttackAnim());
             bt.SetTeam(Team);
             bt.Shot(shot);
 
@@ -207,9 +206,11 @@ public class ZombiePlayer : MonoBehaviour, IPlayer
 
     IEnumerator AttackAnim()
     {
-        animator.SetBool("Attack", true);
-        yield return new WaitForSeconds(0.4f);
-        animator.SetBool("Attack", false);
+        //animator.SetBool("Attack", true);
+        if(IsAlive)
+            animator.SetTrigger("Fire");
+        yield return new WaitForSeconds(0.1f);
+        //animator.SetBool("Attack", false);
     }
 
     public bool TakeDamage(Hit hit)

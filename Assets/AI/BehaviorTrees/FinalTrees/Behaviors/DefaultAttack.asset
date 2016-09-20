@@ -32,10 +32,8 @@ MonoBehaviour:
       closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;action
       repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;&quot; name=&quot;Fire Attack&quot; debugbreak=&quot;False&quot;
-      classname=&quot;FireAttack&quot; /&gt;&lt;animate repeatuntil=&quot;running&quot;
-      name=&quot;animate&quot; debugbreak=&quot;False&quot; animationstate=&quot;Attack&quot;
-      /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
-      priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
+      classname=&quot;FireAttack&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;constraint&quot; debugbreak=&quot;False&quot;
       constraint=&quot;enemy == null&quot;&gt;&lt;expression returnvalue=&quot;evaluate&quot;
       repeatuntil=&quot;&quot; name=&quot;expression&quot; expression=&quot;command
       = null&quot; debugbreak=&quot;False&quot; /&gt;&lt;expression returnvalue=&quot;success&quot;

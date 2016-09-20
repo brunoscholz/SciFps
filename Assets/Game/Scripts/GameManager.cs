@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
 
             int randModel = UnityEngine.Random.Range(0, models.Count);
 
-            Transform go = Instantiate(models[randModel], pos, Quaternion.identity) as Transform;
+            Transform go = Instantiate(models[0], pos, Quaternion.identity) as Transform; //randModel
             go.eulerAngles = playerPrefab.eulerAngles + 180f * Vector3.up;
             go.name = "red" + "Bot_0" + (i + 1);
             ZombiePlayer zombie = go.GetComponent<ZombiePlayer>();
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
                 pos.z -= 3;
 
             int randModel = UnityEngine.Random.Range(0, models.Count);
-            Transform go = Instantiate(models[randModel], pos, Quaternion.identity) as Transform;
+            Transform go = Instantiate(models[0], pos, Quaternion.identity) as Transform;
             go.name = "blue" + "Bot_0" + (i + 1);
             ZombiePlayer zombie = go.GetComponent<ZombiePlayer>();
             zombie.SetUpPlayer(TeamName.blue, i);
