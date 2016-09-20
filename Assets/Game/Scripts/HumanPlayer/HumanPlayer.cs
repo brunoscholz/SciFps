@@ -150,14 +150,15 @@ public class HumanPlayer : MonoBehaviour, IPlayer
     public void SetColors(Hud h)
     {
         hud = h;
+        Color color = TeamSets.Colors[Team.ToString()];
+        hud.crosshair.color = color;
+        SkinnedMeshRenderer rend = transform.GetComponentInChildren<SkinnedMeshRenderer>();
+        rend.material.SetColor("_EmissionColor", color);
     }
 
     public void SetColors()
     {
-        //transform.GetComponentInChildren<SkinnedMeshRenderer>().material.SetColor("albedo", TeamSets.Colors[Team.ToString()]);
-        //SkinnedMeshRenderer rend = transform.GetComponentInChildren<SkinnedMeshRenderer>();
-        //rend.material.shader = Shader.Find("Albedo");
-        //rend.material.SetColor("_Color", TeamSets.Colors[Team.ToString()]);
+        
     }
 
     public void Respawn()
