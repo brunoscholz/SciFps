@@ -11,7 +11,7 @@ public class Base : MonoBehaviour
         {
             IPlayer player = other.GetComponent<IPlayer>();
             if(player.Team == Team)
-                player.Health += 5 * Time.deltaTime;
+                player.Health += 10 * Time.deltaTime;
         }
     }
 }
