@@ -100,7 +100,7 @@ public class HumanPlayer : MonoBehaviour, IPlayer
 
     void FixedUpdate()
     {
-        if (!IsAlive || !gm.gameRunning)
+        if (!IsAlive)
             return;
 
         if (Input.GetButtonDown("Reload"))
@@ -108,7 +108,7 @@ public class HumanPlayer : MonoBehaviour, IPlayer
             shooter.Reload();
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             Attack(null);
             StartCoroutine(ShootAnim());
